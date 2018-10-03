@@ -90,7 +90,7 @@ public class FunkcjeObliczenia {
         double wynik = 0;
 
         wynik = (((L.X-C.X)*(P.Y-C.Y)))-(((P.X-C.X)*(L.Y-C.Y)))/(((L.X-C.X)*(P.X-C.X))+((L.Y-C.Y)*(P.Y-C.Y)));
-        wynik = toDegrees(atan(toRadians(wynik)));
+        wynik = toDegrees(atan(wynik));
 
         return wynik;
     }
@@ -126,7 +126,7 @@ public class FunkcjeObliczenia {
     public static Punkt wciecieliniowe(Punkt A, Punkt B, double a, double b){
         Punkt P = new Punkt();
 
-        double aa,bb,cc,Ca,Cb,Cc, Pole;
+        double aa, bb, cc, Ca, Cb, Cc, Pole;
 
         double c = odleglosc(A,B);
 
