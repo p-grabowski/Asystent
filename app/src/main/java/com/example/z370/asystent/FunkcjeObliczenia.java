@@ -1,0 +1,172 @@
+package com.example.z370.asystent;
+
+import android.text.Editable;
+
+import static android.os.Build.VERSION_CODES.P;
+import static java.lang.Math.abs;
+import static java.lang.Math.atan;
+import static java.lang.Math.cos;
+import static java.lang.Math.pow;
+import static java.lang.Math.sin;
+import static java.lang.Math.sqrt;
+import static java.lang.Math.tan;
+import static java.lang.Math.toDegrees;
+import static java.lang.Math.toRadians;
+
+public class FunkcjeObliczenia {
+
+
+
+    public static class Punkt{
+        double X=0;
+        double Y=0;
+        double H=0;
+    }
+
+    public static double odleglosc(Punkt A, Punkt B){
+
+        double wynik=0;
+        wynik = sqrt(pow((B.X-A.X),2)+pow((B.Y-A.Y),2));
+
+        return wynik;
+    }
+
+    public static double spadek(Punkt A, Punkt B){
+        double wynik=0;
+
+        wynik = (B.H - A.H)/odleglosc(A, B);
+
+        return wynik;
+    }
+
+    public static double azymut(Punkt A, Punkt B){
+
+        double wynik=0, wynik2=0;
+        wynik = toDegrees(atan(abs((B.Y-A.Y)/(B.X-A.X)))); ////Sprawdzić wynik
+        double dx,dy;
+        dx=B.X-A.X;
+        dy=B.Y-A.Y;
+
+        if (dx>0 && dy>0)
+            wynik2=wynik;
+        else if(dx<0 && dy>0)
+            wynik2=180-wynik;
+        else if(dx<0 && dy<0)
+            wynik2=180+wynik;
+        else  if(dx>0 && dy<0)
+            wynik2=360-wynik;
+
+    return wynik2; //w stopniach
+    }
+
+    public static Punkt domiarprost(Punkt A, Punkt B, double l, double h){
+
+        Punkt P = new Punkt();
+        P.X = A.X + ( l * cos(toRadians(azymut(A, B)))- h * sin(toRadians(azymut(A, B))));
+        P.Y = A.Y + ( l * sin(toRadians(azymut(A, B)))- h * cos(toRadians(azymut(A, B))));
+
+        return P;
+    }
+
+    public static Punkt domiarbiegunowy (Punkt A, Punkt B, double d, double a){
+
+        Punkt P = new Punkt();
+        P.X = A.X + (d * cos(toRadians(azymut(A, B) + a)));
+        P.Y = A.Y + (d * sin(toRadians(azymut(A, B) + a)));
+
+        return P;
+    }
+
+    public static Punkt punktnaprostej(Punkt A, Punkt B, double l){
+
+        Punkt P = new Punkt();
+        P.X = A.X + ( l * cos(toRadians(azymut(A, B))));
+        P.Y = A.Y + ( l * sin(toRadians(azymut(A, B))));
+
+        return P;
+    }
+
+    public static double katCLP(Punkt C, Punkt L, Punkt P){
+        double wynik = 0;
+
+        wynik = (((L.X-C.X)*(P.Y-C.Y)))-(((P.X-C.X)*(L.Y-C.Y)))/(((L.X-C.X)*(P.X-C.X))+((L.Y-C.Y)*(P.Y-C.Y)));
+        wynik = toDegrees(atan(toRadians(wynik)));
+
+        return wynik;
+    }
+
+    public static Punkt przeciecieprostych(Punkt A, Punkt B, Punkt C, Punkt D){
+
+        Punkt P = new Punkt();
+
+        ///strona 214
+
+        double lambda = tan(toRadians(azymut(A, B)));
+        double mi = tan(toRadians(azymut(C, D)));
+
+        P.X = (C.Y-A.Y+(lambda*A.X)-(mi*C.X))/(lambda-mi);
+        P.Y = A.Y + lambda*(P.X-A.X);
+
+        return P;
+    }
+
+    public static Punkt wcieciewprzod(Punkt A, Punkt B,double a,double b){
+        Punkt P = new Punkt();
+
+        a = 1 / tan(toRadians(a));         //ctan = 1 / tan
+        b = 1 / tan(toRadians(b));
+
+        P.X = ((A.X*b)+A.Y+(B.X*a)+B.Y)/(a+b);
+        P.Y = (-A.X+(A.Y*b)+B.X+(B.Y*a))/(a+b);
+
+        return P;
+    }
+
+
+    public static Punkt wciecieliniowe(Punkt A, Punkt B, double a, double b){
+        Punkt P = new Punkt();
+
+        double aa,bb,cc,Ca,Cb,Cc, Pole;
+
+        double c = odleglosc(A,B);
+
+        aa = a*a;
+        bb = b*b;
+        cc = c*c;
+
+        Ca = bb+cc-aa;
+        Cb = aa-bb+cc;
+        Cc = aa+bb-cc;
+
+        Pole = sqrt((Ca*Cb)+(Cb*Cc)+(Cc*Ca));
+
+        P.X = ((A.X*Cb)+(A.Y*Pole)+(B.X*Ca)-(B.Y*Pole))/(Ca+Cb);
+        P.Y = ((A.X*Pole*-1)+(A.Y*Cb)+(B.X*Pole)-(B.Y*Ca))/(Ca+Cb);
+
+        return P;
+    }
+
+    public static Punkt wcieciewstecz (Punkt A, Punkt B, Punkt C, double a, double b){
+        Punkt P = new Punkt();
+
+        double f1, f2, F1, F2, F0, dx, dy;
+
+        a = 1 / tan(toRadians(a)); // ctg a
+        b = 1 / tan(toRadians(b)); // ctg b
+
+        f1 = (C.X-A.X)-((C.Y-A.Y)*a);
+        f2 = ((C.X-A.X)*a)+(C.Y-A.Y);
+        F1 = (C.X-A.X)-((C.Y-A.Y)*a)+((B.X-A.X)*-1)-(B.Y-A.Y)*b*-1;
+        F2 = ((C.X-A.X)*a)+(C.Y-A.Y)+((B.X-A.X)*-1*b)+(B.Y-A.Y)*-1;
+        F0 = F1/F2;
+
+        dx = (f1-(f2*F0))/(pow(F0,2)+1);
+        dy = F0 * dx;
+
+        P.X = A.X + dx;
+        P.Y = A.Y + dy;
+
+        return P;
+    }
+
+}

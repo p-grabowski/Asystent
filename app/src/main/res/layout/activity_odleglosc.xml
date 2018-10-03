@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".odleglosc"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Azymut i Odległość"
+        android:textSize="30dp"
+        android:layout_margin="30dp"/>
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Punkt A:" />
+
+    <EditText
+            android:id="@+id/editText_AX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+        android:hint="X"
+        android:textColorHint="#0000ff"/>
+
+    <EditText
+        android:id="@+id/editText_AY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Y"
+        android:inputType="number"
+        android:textColorHint="#0000ff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Punkt B:" />
+
+    <EditText
+        android:id="@+id/editText_BX"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="X"
+        android:textColorHint="#0000ff"/>
+
+
+    <EditText
+        android:id="@+id/editText_BY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Y"
+        android:inputType="number"
+        android:textColorHint="#0000ff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:id="@+id/odleglosc"
+        android:hint="Odległość A-B :"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:id="@+id/azymut"
+        android:hint="Azymut A-B: "
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Oblicz"
+        android:id="@+id/obliczodleglosc"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wróć"
+        android:id="@+id/wroc1"/>
+</LinearLayout>
