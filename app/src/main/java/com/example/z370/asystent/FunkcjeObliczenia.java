@@ -91,7 +91,7 @@ public class FunkcjeObliczenia {
 
         wynik = (((L.X-C.X)*(P.Y-C.Y)))-(((P.X-C.X)*(L.Y-C.Y)))/(((L.X-C.X)*(P.X-C.X))+((L.Y-C.Y)*(P.Y-C.Y)));
         wynik = toDegrees(atan(wynik));
-
+ 
         return wynik;
     }
 

@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".odleglosc"></activity>
+        <activity android:name=".odleglosc" />
+        <activity android:name=".domiarprostokatny"></activity>
     </application>
 
 </manifest>

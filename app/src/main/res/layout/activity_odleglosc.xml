@@ -21,7 +21,7 @@
             android:text="Punkt A:" />
 
     <EditText
-            android:id="@+id/editText_AX"
+            android:id="@+id/eT_AX_odl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
@@ -29,7 +29,7 @@
         android:textColorHint="#0000ff"/>
 
     <EditText
-        android:id="@+id/editText_AY"
+        android:id="@+id/eT_AY_odl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Y"
@@ -42,7 +42,7 @@
         android:text="Punkt B:" />
 
     <EditText
-        android:id="@+id/editText_BX"
+        android:id="@+id/eT_BX_odl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
@@ -51,7 +51,7 @@
 
 
     <EditText
-        android:id="@+id/editText_BY"
+        android:id="@+id/eT_BY_odl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Y"
@@ -65,7 +65,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
-        android:id="@+id/odleglosc"
+        android:id="@+id/tV_odleglosc"
         android:hint="Odległość A-B :"
         />
     <TextView
@@ -75,17 +75,17 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="10dp"
         android:textSize="20dp"
-        android:id="@+id/azymut"
+        android:id="@+id/tV_azymut"
         android:hint="Azymut A-B: "
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Oblicz"
-        android:id="@+id/obliczodleglosc"/>
+        android:id="@+id/B_oblicz_odleglosc"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Wróć"
-        android:id="@+id/wroc1"/>
+        android:id="@+id/B_wroc1"/>
 </LinearLayout>

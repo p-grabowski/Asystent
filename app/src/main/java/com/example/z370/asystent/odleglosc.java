@@ -23,14 +23,16 @@ TextView odleglosc, azymut;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_odleglosc);
 
-    oblicz = findViewById(R.id.obliczodleglosc);
-    Ax = findViewById(R.id.editText_AX);
-    Ay = findViewById(R.id.editText_AY);
-    Bx = findViewById(R.id.editText_BX);
-    By = findViewById(R.id.editText_BY);
-    odleglosc = findViewById(R.id.odleglosc);
-    azymut = findViewById(R.id.azymut);
-    wroc1 = findViewById(R.id.wroc1);
+    Ax = findViewById(R.id.eT_AX_odl);
+    Ay = findViewById(R.id.eT_AY_odl);
+    Bx = findViewById(R.id.eT_BX_odl);
+    By = findViewById(R.id.eT_BY_odl);
+
+    odleglosc = findViewById(R.id.tV_odleglosc);
+    azymut = findViewById(R.id.tV_azymut);
+
+    oblicz = findViewById(R.id.B_oblicz_odleglosc);
+    wroc1 = findViewById(R.id.B_wroc1);
 
         oblicz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,13 +55,8 @@ TextView odleglosc, azymut;
         wroc1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-
-                finish(); // jeśli chcesz, zlikwidować poprzednie activity, aby nie było go na stosie.
-
-                startActivity(i);
-
+                finish();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
 
