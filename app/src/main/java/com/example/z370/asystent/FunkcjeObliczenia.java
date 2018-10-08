@@ -63,7 +63,7 @@ public class FunkcjeObliczenia {
 
         Punkt P = new Punkt();
         P.X = A.X + ( l * cos(toRadians(azymut(A, B)))- h * sin(toRadians(azymut(A, B))));
-        P.Y = A.Y + ( l * sin(toRadians(azymut(A, B)))- h * cos(toRadians(azymut(A, B))));
+        P.Y = A.Y + ( l * sin(toRadians(azymut(A, B)))+ h * cos(toRadians(azymut(A, B))));
 
         return P;
     }
@@ -91,7 +91,7 @@ public class FunkcjeObliczenia {
 
         wynik = (((L.X-C.X)*(P.Y-C.Y)))-(((P.X-C.X)*(L.Y-C.Y)))/(((L.X-C.X)*(P.X-C.X))+((L.Y-C.Y)*(P.Y-C.Y)));
         wynik = toDegrees(atan(wynik));
- 
+
         return wynik;
     }
 
