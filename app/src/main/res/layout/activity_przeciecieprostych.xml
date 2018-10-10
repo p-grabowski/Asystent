@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".przeciecie">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="Przecięcie Prostych"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Punkt A:" />
+
+        <EditText
+            android:id="@+id/eT_AX_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="X"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <EditText
+            android:id="@+id/eT_AY_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Y"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Punkt B:" />
+
+        <EditText
+            android:id="@+id/eT_BX_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="X"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <EditText
+            android:id="@+id/eT_BY_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Y"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Punkt C:" />
+
+        <EditText
+            android:id="@+id/eT_CX_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="X"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <EditText
+            android:id="@+id/eT_CY_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Y"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Punkt D:" />
+
+        <EditText
+            android:id="@+id/eT_DX_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="X"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <EditText
+            android:id="@+id/eT_DY_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Y"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <TextView
+            android:id="@+id/tV_PX_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:hint="P X :"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tV_PY_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:hint="P Y :"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/B_zapisz_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Zapisz Punkt" />
+
+        <Button
+            android:id="@+id/B_oblicz_przeciecie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Oblicz" />
+
+        <Button
+            android:id="@+id/B_wroc6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Wróć" />
+    </LinearLayout>
+
+</ScrollView>

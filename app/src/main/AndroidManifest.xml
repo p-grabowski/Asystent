@@ -17,7 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".odleglosc" />
-        <activity android:name=".domiarprostokatny"></activity>
+        <activity android:name=".domiarprostokatny" />
+        <activity android:name=".domiarbiegunowy" />
+        <activity android:name=".punktnaprostej" />
+        <activity android:name=".przeciecieprostych" />
+        <activity android:name=".katclp" />
+        <activity android:name=".wciecieliniowe" />
+        <activity android:name=".wcieciewprzod" />
+        <activity android:name=".wcieciewstecz"></activity>
     </application>
 
 </manifest>

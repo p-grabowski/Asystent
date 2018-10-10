@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-    Button odleglosc, domiarprost;
+    Button odleglosc, domiarprost, domiarbieg, katclp, przeciecie, punkt, liniowe, wprzod, wstecz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,22 +16,76 @@ public class MainActivity extends Activity {
 
     odleglosc = findViewById(R.id.odleglosc);
     domiarprost = findViewById(R.id.domiarprost);
+    domiarbieg = findViewById(R.id.domiarbieg);
+    katclp = findViewById(R.id.katclp);
+    przeciecie = findViewById(R.id.przeciecie);
+    punkt = findViewById(R.id.punkt);
+    liniowe = findViewById(R.id.liniowe);
+    wprzod = findViewById(R.id.wprzod);
+    wstecz = findViewById(R.id.wstecz);
 
-
-    odleglosc.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            finish();
-            startActivity(new Intent(getApplicationContext(), odleglosc.class));
-        }
-    });
-
-    domiarprost.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            finish();
-            startActivity(new Intent(getApplicationContext(), domiarprostokatny.class));
-        }
-    });
+        odleglosc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), odleglosc.class));
+            }
+        });
+        domiarprost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), domiarprostokatny.class));
+            }
+        });
+        domiarbieg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), domiarbiegunowy.class));
+            }
+        });
+        katclp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), katclp.class));
+            }
+        });
+        przeciecie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), przeciecieprostych.class));
+            }
+        });
+        punkt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), punktnaprostej.class));
+            }
+        });
+        liniowe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), wciecieliniowe.class));
+            }
+        });
+        wprzod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), wcieciewprzod.class));
+            }
+        });
+        wstecz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), wcieciewstecz.class));
+            }
+        });
     }
 }

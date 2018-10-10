@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".katclp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="Kąt C L P"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Punkt C:" />
+
+        <EditText
+            android:id="@+id/eT_CX_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="X"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <EditText
+            android:id="@+id/eT_CY_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Y"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Punkt L:" />
+
+        <EditText
+            android:id="@+id/eT_LX_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="X"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+
+        <EditText
+            android:id="@+id/eT_LY_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Y"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Punkt P:" />
+
+        <EditText
+            android:id="@+id/eT_PX_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="X"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+
+        <EditText
+            android:id="@+id/eT_PY_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Y"
+            android:inputType="number"
+            android:textColorHint="#0000ff" />
+
+
+        <TextView
+            android:id="@+id/tV_W_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:hint="Kąt :"
+            android:textSize="20dp" />
+
+
+        <Button
+            android:id="@+id/B_zapisz_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Zapisz Punkt" />
+
+        <Button
+            android:id="@+id/B_oblicz_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Oblicz" />
+
+        <Button
+            android:id="@+id/B_wroc5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Wróć" />
+    </LinearLayout>
+
+</ScrollView>
