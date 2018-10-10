@@ -1,8 +1,5 @@
 package com.example.z370.asystent;
 
-import android.text.Editable;
-
-import static android.os.Build.VERSION_CODES.P;
 import static java.lang.Math.abs;
 import static java.lang.Math.atan;
 import static java.lang.Math.cos;
