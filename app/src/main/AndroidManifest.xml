@@ -25,7 +25,9 @@
         <activity android:name=".wciecieliniowe" />
         <activity android:name=".wcieciewprzod" />
         <activity android:name=".wcieciewstecz" />
-        <activity android:name=".spadek"></activity>
+        <activity android:name=".spadek" />
+        <activity android:name=".Obliczenia" />
+        <activity android:name=".Punkty"></activity>
     </application>
 
 </manifest>

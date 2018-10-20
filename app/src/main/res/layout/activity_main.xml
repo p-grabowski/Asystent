@@ -12,84 +12,21 @@
 
 
     <Button
-        android:id="@+id/odleglosc"
+        android:id="@+id/punkty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Odleglosc"
+        android:text="Punkty"
         android:textSize="30dp"
         android:textColor="#0f0f0f"
         />
     <Button
-        android:id="@+id/spadek"
+        android:id="@+id/obliczenia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Spadek"
+        android:text="Obliczenia"
         android:textSize="30dp"
         android:textColor="#0f0f0f"
         />
-    <Button
-        android:id="@+id/domiarprost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="domiar prost"
-        android:textSize="30dp"
-        android:textColor="#0f0f0f"
-        />
-    <Button
-        android:id="@+id/domiarbieg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="domiar bieg"
-        android:textSize="30dp"
-        android:textColor="#0f0f0f"
-        />
-    <Button
-        android:id="@+id/katclp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kąt CLP"
-        android:textSize="30dp"
-        android:textColor="#0f0f0f"
-        />
-    <Button
-        android:id="@+id/przeciecie"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Przecięcie prostych"
-        android:textSize="30dp"
-        android:textColor="#0f0f0f"
-        />
-    <Button
-        android:id="@+id/punkt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="punkt na prostej"
-        android:textSize="30dp"
-        android:textColor="#0f0f0f"
-        />
-    <Button
-        android:id="@+id/liniowe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="wcięcie liniowe"
-        android:textSize="30dp"
-        android:textColor="#0f0f0f"
-        />
-    <Button
-        android:id="@+id/wprzod"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="wciecie w przód"
-        android:textSize="30dp"
-        android:textColor="#0f0f0f"
-        />
-    <Button
-        android:id="@+id/wstecz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="wciecie wstecz"
-        android:textSize="30dp"
-        android:textColor="#0f0f0f"
-        />
+
 </LinearLayout>
 </ScrollView>
