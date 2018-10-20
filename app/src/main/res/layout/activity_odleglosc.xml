@@ -24,16 +24,17 @@
             android:id="@+id/eT_AX_odl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="numberDecimal"
         android:hint="X"
-        android:textColorHint="#0000ff"/>
+        android:textColorHint="#0000ff"
+         />
 
     <EditText
         android:id="@+id/eT_AY_odl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Y"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textColorHint="#0000ff"/>
 
     <TextView
@@ -45,7 +46,7 @@
         android:id="@+id/eT_BX_odl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:hint="X"
         android:textColorHint="#0000ff"/>
 
@@ -55,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Y"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textColorHint="#0000ff"/>
 
     <TextView

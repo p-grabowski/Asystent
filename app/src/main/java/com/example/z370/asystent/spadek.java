@@ -10,32 +10,31 @@ import android.widget.TextView;
 
 import static java.lang.Double.parseDouble;
 
-public class domiarbiegunowy extends Activity {
+public class spadek extends Activity {
 
-    Button oblicz, zapisz, wroc;
-    EditText Ax, Ay, Bx, By, a, d;
-    TextView Px, Py;
+    Button oblicz, wroc;
+    EditText Ax, Ay, Ah, Bx, By, Bh;
+    TextView odleglosc, spadek;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_domiarbiegunowy);
+        setContentView(R.layout.activity_spadek);
 
-        oblicz = findViewById(R.id.B_oblicz_domiarbieg);
-        zapisz = findViewById(R.id.B_zapisz_domiarbieg);
-        wroc = findViewById(R.id.B_wroc3);
+        Ax = findViewById(R.id.eT_AX_spad);
+        Ay = findViewById(R.id.eT_AY_spad);
+        Ah = findViewById(R.id.eT_AH_spad);
 
-        Ax = findViewById(R.id.eT_AX_domiarbieg);
-        Ay = findViewById(R.id.eT_AY_domiarbieg);
-        Bx = findViewById(R.id.eT_BX_domiarbieg);
-        By = findViewById(R.id.eT_BY_domiarbieg);
-        a = findViewById(R.id.eT_a_domiarbieg);
-        d = findViewById(R.id.eT_d_domiarbieg);
+        Bx = findViewById(R.id.eT_BX_spad);
+        By = findViewById(R.id.eT_BY_spad);
+        Bh = findViewById(R.id.eT_BH_spad);
 
-        Px = findViewById(R.id.tV_PX_domiarbieg);
-        Py = findViewById(R.id.tV_PY_domiarbieg);
+        odleglosc = findViewById(R.id.tV_odleglosc_spad);
+        spadek = findViewById(R.id.tV_spadek);
 
+        oblicz = findViewById(R.id.B_oblicz_spadek);
+        wroc = findViewById(R.id.B_wroc10);
 
         oblicz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,33 +42,29 @@ public class domiarbiegunowy extends Activity {
 
                 FunkcjeObliczenia.Punkt A = new FunkcjeObliczenia.Punkt();
                 FunkcjeObliczenia.Punkt B = new FunkcjeObliczenia.Punkt();
-                FunkcjeObliczenia.Punkt P = new FunkcjeObliczenia.Punkt();
-
-                double ea, ed;
 
                 A.X = parseDouble(String.valueOf(Ax.getText()));
                 A.Y = parseDouble(String.valueOf(Ay.getText()));
+                A.H = parseDouble(String.valueOf(Ah.getText()));
+
                 B.X = parseDouble(String.valueOf(Bx.getText()));
                 B.Y = parseDouble(String.valueOf(By.getText()));
-                ea = parseDouble(String.valueOf(a.getText()));
-                ed = parseDouble(String.valueOf(d.getText()));
+                B.H = parseDouble(String.valueOf(Bh.getText()));
 
-                P = FunkcjeObliczenia.domiarbiegunowy(A, B, ed, ea);
+                odleglosc.setText("Odległość A-B: "+FunkcjeObliczenia.odleglosc(A, B));
+                spadek.setText("Spadek A-B: "+FunkcjeObliczenia.spadek(A,B));
 
-                Px.setText("P X = "+P.X);
-                Py.setText("P Y = "+P.Y);
             }
         });
-
 
         wroc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-
             }
         });
+
 
     }
 }

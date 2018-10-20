@@ -86,8 +86,9 @@ public class FunkcjeObliczenia {
     public static double katCLP(Punkt C, Punkt L, Punkt P){
         double wynik = 0;
 
-        wynik = (((L.X-C.X)*(P.Y-C.Y)))-(((P.X-C.X)*(L.Y-C.Y)))/(((L.X-C.X)*(P.X-C.X))+((L.Y-C.Y)*(P.Y-C.Y)));
-        wynik = toDegrees(atan(wynik));
+        wynik = azymut(C, P) - azymut(C, L);
+
+        if(wynik<0) wynik=wynik+360;
 
         return wynik;
     }
@@ -95,8 +96,6 @@ public class FunkcjeObliczenia {
     public static Punkt przeciecieprostych(Punkt A, Punkt B, Punkt C, Punkt D){
 
         Punkt P = new Punkt();
-
-        ///strona 214
 
         double lambda = tan(toRadians(azymut(A, B)));
         double mi = tan(toRadians(azymut(C, D)));
@@ -107,14 +106,14 @@ public class FunkcjeObliczenia {
         return P;
     }
 
-    public static Punkt wcieciewprzod(Punkt A, Punkt B,double a,double b){
+    public static Punkt wcieciewprzod(Punkt A, Punkt B, double a, double b){
         Punkt P = new Punkt();
 
-        a = 1 / tan(toRadians(a));         //ctan = 1 / tan
+        a = 1 / tan(toRadians(a));         //ctan = 1 / tan // a = ctg a
         b = 1 / tan(toRadians(b));
 
-        P.X = ((A.X*b)+A.Y+(B.X*a)+B.Y)/(a+b);
-        P.Y = (-A.X+(A.Y*b)+B.X+(B.Y*a))/(a+b);
+        P.X = ((A.X*b)+A.Y+(B.X*a)-B.Y)/(a+b);
+        P.Y = ((A.X*-1)+(A.Y*b)+B.X+(B.Y*a))/(a+b);
 
         return P;
     }
@@ -138,7 +137,7 @@ public class FunkcjeObliczenia {
         Pole = sqrt((Ca*Cb)+(Cb*Cc)+(Cc*Ca));
 
         P.X = ((A.X*Cb)+(A.Y*Pole)+(B.X*Ca)-(B.Y*Pole))/(Ca+Cb);
-        P.Y = ((A.X*Pole*-1)+(A.Y*Cb)+(B.X*Pole)-(B.Y*Ca))/(Ca+Cb);
+        P.Y = ((A.X*Pole*-1)+(A.Y*Cb)+(B.X*Pole)+(B.Y*Ca))/(Ca+Cb);
 
         return P;
     }
@@ -157,8 +156,8 @@ public class FunkcjeObliczenia {
         F2 = ((C.X-A.X)*a)+(C.Y-A.Y)+((B.X-A.X)*-1*b)+(B.Y-A.Y)*-1;
         F0 = F1/F2;
 
-        dx = (f1-(f2*F0))/(pow(F0,2)+1);
-        dy = F0 * dx;
+        dx = (f1-(f2*F0))/((F0*F0)+1);
+        dy = F0 * dx * -1;
 
         P.X = A.X + dx;
         P.Y = A.Y + dy;

@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
-
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".domiarprostokatny">
+    tools:context=".odleglosc"
+    android:orientation="vertical">
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:text="Domiar Prostokątny"
-        android:textAlignment="center"
-        android:textSize="30dp" />
+        android:text="Spadek i Odległość"
+        android:textSize="30dp"
+        android:layout_margin="30dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -27,20 +25,27 @@
         android:text="Punkt A:" />
 
     <EditText
-        android:id="@+id/eT_AX_domiarprost"
+        android:id="@+id/eT_AX_spad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
         android:hint="X"
-        android:inputType="numberSigned"
-        android:textColorHint="#0000ff" />
-
+        android:textColorHint="#0000ff"
+        />
     <EditText
-        android:id="@+id/eT_AY_domiarprost"
+        android:id="@+id/eT_AY_spad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Y"
-        android:inputType="numberSigned"
-        android:textColorHint="#0000ff" />
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff"/>
+    <EditText
+        android:id="@+id/eT_AH_spad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="H"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -48,85 +53,56 @@
         android:text="Punkt B:" />
 
     <EditText
-        android:id="@+id/eT_BX_domiarprost"
+        android:id="@+id/eT_BX_spad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="X"
-        android:inputType="numberSigned"
-        android:textColorHint="#0000ff" />
-
-
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff"/>
     <EditText
-        android:id="@+id/eT_BY_domiarprost"
+        android:id="@+id/eT_BY_spad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Y"
-        android:inputType="numberSigned"
-        android:textColorHint="#0000ff" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rzędna l:" />
-
-    <EditText
-        android:id="@+id/eT_l_domiarprost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="l"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Odcięta h:" />
-
+        android:textColorHint="#0000ff"/>
     <EditText
-        android:id="@+id/eT_h_domiarprost"
+        android:id="@+id/eT_BH_spad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="h"
+        android:hint="H"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColorHint="#0000ff"/>
 
     <TextView
-        android:id="@+id/tV_PX_domiarprost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
-        android:hint="P X :"
-        android:textSize="20dp" />
-
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:id="@+id/tV_odleglosc_spad"
+        android:hint="Odległość A-B :"
+        />
     <TextView
-        android:id="@+id/tV_PY_domiarprost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="10dp"
-        android:hint="P Y: "
-        android:textSize="20dp" />
-
+        android:textSize="20dp"
+        android:id="@+id/tV_spadek"
+        android:hint="Spadek A-B: "
+        />
     <Button
-        android:id="@+id/B_zapisz_domiarprost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Zapisz Punkt" />
-
+        android:layout_height="wrap_content"
+        android:text="Oblicz"
+        android:id="@+id/B_oblicz_spadek"/>
     <Button
-        android:id="@+id/B_oblicz_domiarprost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Oblicz" />
-
-    <Button
-        android:id="@+id/B_wroc2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Wróć" />
+        android:layout_height="wrap_content"
+        android:text="Wróć"
+        android:id="@+id/B_wroc10"/>
 </LinearLayout>
-
 </ScrollView>

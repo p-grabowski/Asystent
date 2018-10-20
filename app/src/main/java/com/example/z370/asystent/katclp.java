@@ -12,7 +12,7 @@ import static java.lang.Double.parseDouble;
 
 public class katclp extends Activity {
 
-    Button oblicz, zapisz, wroc;
+    Button oblicz, wroc;
     EditText Cx, Cy, Lx, Ly, Px, Py;
     TextView W;
 
@@ -23,7 +23,6 @@ public class katclp extends Activity {
         setContentView(R.layout.activity_katclp);
 
         oblicz = findViewById(R.id.B_oblicz_katclp);
-        zapisz = findViewById(R.id.B_zapisz_katclp);
         wroc = findViewById(R.id.B_wroc5);
 
         Cx = findViewById(R.id.eT_CX_katclp);
@@ -50,7 +49,7 @@ public class katclp extends Activity {
                 C.Y = parseDouble(String.valueOf(Cy.getText()));
                 L.X = parseDouble(String.valueOf(Lx.getText()));
                 L.Y = parseDouble(String.valueOf(Ly.getText()));
-                P.Y = parseDouble(String.valueOf(Px.getText()));
+                P.X = parseDouble(String.valueOf(Px.getText()));
                 P.Y = parseDouble(String.valueOf(Py.getText()));
 
 

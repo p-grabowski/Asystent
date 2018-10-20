@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="X"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
 
         <EditText
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Y"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="X"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
 
 
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Y"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
 
         <TextView
@@ -87,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="d"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
 
         <TextView

@@ -24,7 +24,8 @@
         <activity android:name=".katclp" />
         <activity android:name=".wciecieliniowe" />
         <activity android:name=".wcieciewprzod" />
-        <activity android:name=".wcieciewstecz"></activity>
+        <activity android:name=".wcieciewstecz" />
+        <activity android:name=".spadek"></activity>
     </application>
 
 </manifest>

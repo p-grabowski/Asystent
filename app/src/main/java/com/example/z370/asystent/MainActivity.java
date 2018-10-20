@@ -8,13 +8,14 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-    Button odleglosc, domiarprost, domiarbieg, katclp, przeciecie, punkt, liniowe, wprzod, wstecz;
+    Button odleglosc, spadek, domiarprost, domiarbieg, katclp, przeciecie, punkt, liniowe, wprzod, wstecz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
     odleglosc = findViewById(R.id.odleglosc);
+    spadek = findViewById(R.id.spadek);
     domiarprost = findViewById(R.id.domiarprost);
     domiarbieg = findViewById(R.id.domiarbieg);
     katclp = findViewById(R.id.katclp);
@@ -29,6 +30,13 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 finish();
                 startActivity(new Intent(getApplicationContext(), odleglosc.class));
+            }
+        });
+        spadek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), spadek.class));
             }
         });
         domiarprost.setOnClickListener(new View.OnClickListener() {

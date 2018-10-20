@@ -20,6 +20,14 @@
         android:textColor="#0f0f0f"
         />
     <Button
+        android:id="@+id/spadek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spadek"
+        android:textSize="30dp"
+        android:textColor="#0f0f0f"
+        />
+    <Button
         android:id="@+id/domiarprost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
