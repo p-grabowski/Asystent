@@ -1,5 +1,7 @@
 package com.example.z370.asystent;
 
+import android.app.Dialog;
+
 import static java.lang.Math.abs;
 import static java.lang.Math.atan;
 import static java.lang.Math.cos;
@@ -12,15 +14,14 @@ import static java.lang.Math.toRadians;
 
 public class FunkcjeObliczenia {
 
-
-
     public static class Punkt{
-        double X=0;
-        double Y=0;
-        double H=0;
-    }
+        public String Nazwa;
+        public double X=0;
+        public double Y=0;
+        public double H=0;
+            }
 
-    public static double odleglosc(Punkt A, Punkt B){
+   public static double odleglosc(Punkt A, Punkt B){
 
         double wynik=0;
         wynik = sqrt(pow((B.X-A.X),2)+pow((B.Y-A.Y),2));
@@ -164,5 +165,7 @@ public class FunkcjeObliczenia {
 
         return P;
     }
+
+
 
 }

@@ -6,15 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".odleglosc"
     android:orientation="vertical">
-
-
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<TableRow>
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="?"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/bT_pomoc_odl"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Azymut i Odległość"
         android:textSize="30dp"
         android:layout_margin="30dp"/>
-
+    </TableRow>
+</TableLayout>
             <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

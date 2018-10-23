@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tV_punkt_nazwa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nazwa"
+        android:textSize="20dp"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:id="@+id/tV_punkt_x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/tV_punkt_y"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Y"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/tV_punkt_h"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="H"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"/>
+</LinearLayout>

@@ -1,21 +1,24 @@
 package com.example.z370.asystent;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import static java.lang.Double.parseDouble;
 
 public class domiarbiegunowy extends Activity {
 
-    Button oblicz, zapisz, wroc;
+    Button oblicz, zapisz, wroc, pomoc, ok;
     EditText Ax, Ay, Bx, By, a, d;
     TextView Px, Py;
-
+    Dialog Pomoc;
+    ImageView obrazek;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,7 @@ public class domiarbiegunowy extends Activity {
         oblicz = findViewById(R.id.B_oblicz_domiarbieg);
         zapisz = findViewById(R.id.B_zapisz_domiarbieg);
         wroc = findViewById(R.id.B_wroc3);
+        pomoc = findViewById(R.id.bT_pomoc_domiarbieg);
 
         Ax = findViewById(R.id.eT_AX_domiarbieg);
         Ay = findViewById(R.id.eT_AY_domiarbieg);
@@ -66,10 +70,39 @@ public class domiarbiegunowy extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Obliczenia.class));
 
             }
         });
 
+        pomoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
+
+    public void oknopomocy(){
+        Pomoc = new Dialog(domiarbiegunowy.this);
+        Pomoc.setContentView(R.layout.okno_pomocy);
+        Pomoc.setTitle("Okno pomocy");
+
+        ok = findViewById(R.id.bT_pomoc_ok);
+        ok.setEnabled(true);
+
+        obrazek = findViewById(R.id.iV_pomoc_obrazek);
+        obrazek.setImage/////////////////////////////////////////
+
+
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Pomoc.cancel();
+            }
+        });
+
+        Pomoc.show();
+    }
+
 }
