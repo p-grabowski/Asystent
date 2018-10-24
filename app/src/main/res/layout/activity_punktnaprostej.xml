@@ -3,8 +3,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
-
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -34,13 +32,10 @@
                     android:textSize="30dp" />
             </TableRow>
         </TableLayout>
-
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Punkt A:" />
-
         <EditText
             android:id="@+id/eT_AX_punktnaprost"
             android:layout_width="match_parent"
@@ -48,7 +43,6 @@
             android:hint="X"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
-
         <EditText
             android:id="@+id/eT_AY_punktnaprost"
             android:layout_width="match_parent"
@@ -56,12 +50,10 @@
             android:hint="Y"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Punkt B:" />
-
         <EditText
             android:id="@+id/eT_BX_punktnaprost"
             android:layout_width="match_parent"
@@ -69,8 +61,6 @@
             android:hint="X"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
-
-
         <EditText
             android:id="@+id/eT_BY_punktnaprost"
             android:layout_width="match_parent"
@@ -78,12 +68,10 @@
             android:hint="Y"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Odległość l:" />
-
         <EditText
             android:id="@+id/eT_l_punktnaprost"
             android:layout_width="match_parent"
@@ -91,7 +79,6 @@
             android:hint="l"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff" />
-
         <TextView
             android:id="@+id/tV_PX_punktnaprost"
             android:layout_width="match_parent"
@@ -101,7 +88,6 @@
             android:layout_marginRight="40dp"
             android:hint="P X :"
             android:textSize="20dp" />
-
         <TextView
             android:id="@+id/tV_PY_punktnaprost"
             android:layout_width="match_parent"
@@ -111,24 +97,20 @@
             android:layout_marginBottom="10dp"
             android:hint="P Y: "
             android:textSize="20dp" />
-
         <Button
             android:id="@+id/B_zapisz_punktnaprost"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Zapisz Punkt" />
-
         <Button
             android:id="@+id/B_oblicz_punktnaprost"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Oblicz" />
-
         <Button
             android:id="@+id/B_wroc4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Wróć" />
     </LinearLayout>
-
 </ScrollView>

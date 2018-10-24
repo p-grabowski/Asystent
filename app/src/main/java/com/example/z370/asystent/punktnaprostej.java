@@ -26,7 +26,7 @@ public class punktnaprostej extends Activity {
         oblicz = findViewById(R.id.B_oblicz_punktnaprost);
         zapisz = findViewById(R.id.B_zapisz_punktnaprost);
         wroc = findViewById(R.id.B_wroc4);
-        pomoc = findViewById(R.id.bT_pomoc_przeciecie);
+        pomoc = findViewById(R.id.bT_pomoc_punktnaprost);
 
         Ax = findViewById(R.id.eT_AX_punktnaprost);
         Ay = findViewById(R.id.eT_AY_punktnaprost);
