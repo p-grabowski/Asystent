@@ -1,6 +1,7 @@
 package com.example.z370.asystent;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import static java.lang.Double.parseDouble;
 
 public class punktnaprostej extends Activity {
 
-    Button oblicz, zapisz, wroc;
+    Button oblicz, zapisz, wroc, pomoc;
     EditText Ax, Ay, Bx, By, l, h;
     TextView Px, Py;
 
@@ -25,6 +26,7 @@ public class punktnaprostej extends Activity {
         oblicz = findViewById(R.id.B_oblicz_punktnaprost);
         zapisz = findViewById(R.id.B_zapisz_punktnaprost);
         wroc = findViewById(R.id.B_wroc4);
+        pomoc = findViewById(R.id.bT_pomoc_przeciecie);
 
         Ax = findViewById(R.id.eT_AX_punktnaprost);
         Ay = findViewById(R.id.eT_AY_punktnaprost);
@@ -64,10 +66,23 @@ public class punktnaprostej extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Obliczenia.class));
 
             }
         });
-
+        pomoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pomoc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Dialog Pomoc;
+                        Pomoc = new Dialog(punktnaprostej.this);
+                        Pomoc.setContentView(R.layout.pomoc_punktnaprostej);
+                        Pomoc.show();
+                    }
+                });
+            }
+        });
     }
 }

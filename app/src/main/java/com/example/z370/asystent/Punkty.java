@@ -16,12 +16,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.z370.asystent.FunkcjeObliczenia.PunktyLista;
+
 import java.util.ArrayList;
 
 public class Punkty extends Activity {
 
     ListView listView;
     String number[]={"1","2","3","4","5","6","7","1","2","3","4","5","6","7","1","2","3","4","5","6","7"};
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,20 @@ public class Punkty extends Activity {
         listView=(ListView)findViewById(R.id.lV_punkty);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,number);
         listView.setAdapter(adapter);
+
+
+        PunktyLista punktylsta = new PunktyLista();
+
+        FunkcjeObliczenia.Punkt nowypunkt = new FunkcjeObliczenia.Punkt();
+        nowypunkt.H = 125;
+        nowypunkt.Nazwa = "123123";
+        nowypunkt.Y = 123;
+        nowypunkt.X = 134;
+        
+        punktylsta.ListaPunktow.add(nowypunkt);
+
+
+
 
         // Register the ListView  for Context menu
         registerForContextMenu(listView);

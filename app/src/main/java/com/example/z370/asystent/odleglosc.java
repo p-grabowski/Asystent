@@ -1,11 +1,18 @@
 package com.example.z370.asystent;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import static java.lang.Double.parseDouble;
@@ -13,26 +20,28 @@ import static java.lang.Double.parseDouble;
 
 public class odleglosc extends Activity {
 
-Button oblicz, wroc1;
+Button oblicz, wroc1, pomoc;
 EditText Ax, Ay, Bx, By;
 TextView odleglosc, azymut;
-
+Dialog Pomoc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_odleglosc);
 
-    Ax = findViewById(R.id.eT_AX_odl);
-    Ay = findViewById(R.id.eT_AY_odl);
-    Bx = findViewById(R.id.eT_BX_odl);
-    By = findViewById(R.id.eT_BY_odl);
+        Ax = findViewById(R.id.eT_AX_odl);
+        Ay = findViewById(R.id.eT_AY_odl);
+        Bx = findViewById(R.id.eT_BX_odl);
+        By = findViewById(R.id.eT_BY_odl);
 
-    odleglosc = findViewById(R.id.tV_odleglosc);
-    azymut = findViewById(R.id.tV_azymut);
+        odleglosc = findViewById(R.id.tV_odleglosc);
+        azymut = findViewById(R.id.tV_azymut);
+        pomoc = findViewById(R.id.bT_pomoc_odl);
 
-    oblicz = findViewById(R.id.B_oblicz_odleglosc);
-    wroc1 = findViewById(R.id.B_wroc1);
+        oblicz = findViewById(R.id.B_oblicz_odleglosc);
+        wroc1 = findViewById(R.id.B_wroc1);
+        pomoc = findViewById(R.id.bT_pomoc_odl);
 
         oblicz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,9 +55,8 @@ TextView odleglosc, azymut;
                 B.X = parseDouble(String.valueOf(Bx.getText()));
                 B.Y = parseDouble(String.valueOf(By.getText()));
 
-                odleglosc.setText("Odległość A-B: "+FunkcjeObliczenia.odleglosc(A, B));
-                azymut.setText("Azymut A-B: "+FunkcjeObliczenia.azymut(A,B));
-
+                odleglosc.setText("Odległość A-B: " + FunkcjeObliczenia.odleglosc(A, B));
+                azymut.setText("Azymut A-B: " + FunkcjeObliczenia.azymut(A, B));
             }
         });
 
@@ -56,9 +64,17 @@ TextView odleglosc, azymut;
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Obliczenia.class));
             }
         });
 
+        pomoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Pomoc = new Dialog(odleglosc.this);
+                Pomoc.setContentView(R.layout.pomoc_azymut);
+                Pomoc.show();
+            }
+        });
     }
 }

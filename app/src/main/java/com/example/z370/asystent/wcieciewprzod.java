@@ -1,6 +1,7 @@
 package com.example.z370.asystent;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import static java.lang.Double.parseDouble;
 
 public class wcieciewprzod extends Activity {
 
-    Button oblicz, zapisz, wroc;
+    Button oblicz, zapisz, wroc, pomoc;
     EditText Ax, Ay, Bx, By, a, b;
     TextView Px, Py;
 
@@ -25,6 +26,7 @@ public class wcieciewprzod extends Activity {
         oblicz = findViewById(R.id.B_oblicz_wprzod);
         zapisz = findViewById(R.id.B_zapisz_wprzod);
         wroc = findViewById(R.id.B_wroc7);
+        pomoc = findViewById(R.id.bT_pomoc_wprzod);
 
         Ax = findViewById(R.id.eT_AX_wprzod);
         Ay = findViewById(R.id.eT_AY_wprzod);
@@ -66,10 +68,23 @@ public class wcieciewprzod extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Obliczenia.class));
 
             }
         });
-
+        pomoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pomoc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Dialog Pomoc;
+                        Pomoc = new Dialog(wcieciewprzod.this);
+                        Pomoc.setContentView(R.layout.pomoc_wprzod);
+                        Pomoc.show();
+                    }
+                });
+            }
+        });
     }
 }

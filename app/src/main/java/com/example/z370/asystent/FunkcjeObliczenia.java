@@ -1,6 +1,7 @@
 package com.example.z370.asystent;
 
-import android.app.Dialog;
+
+import java.util.List;
 
 import static java.lang.Math.abs;
 import static java.lang.Math.atan;
@@ -19,6 +20,14 @@ public class FunkcjeObliczenia {
         public double X=0;
         public double Y=0;
         public double H=0;
+            }
+
+            public static class PunktyLista{
+
+                public List<Punkt> ListaPunktow;
+
+
+
             }
 
    public static double odleglosc(Punkt A, Punkt B){

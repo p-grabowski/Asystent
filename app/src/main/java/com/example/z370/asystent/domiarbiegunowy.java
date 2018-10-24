@@ -3,10 +3,14 @@ package com.example.z370.asystent;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,11 +18,10 @@ import static java.lang.Double.parseDouble;
 
 public class domiarbiegunowy extends Activity {
 
-    Button oblicz, zapisz, wroc, pomoc, ok;
+    Button oblicz, zapisz, wroc, pomoc;
     EditText Ax, Ay, Bx, By, a, d;
     TextView Px, Py;
     Dialog Pomoc;
-    ImageView obrazek;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,31 +81,17 @@ public class domiarbiegunowy extends Activity {
         pomoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                pomoc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Pomoc = new Dialog(domiarbiegunowy.this);
+                        Pomoc.setContentView(R.layout.pomoc_biegunowy);
+                        Pomoc.show();
+                    }
+                });
             }
         });
     }
 
-    public void oknopomocy(){
-        Pomoc = new Dialog(domiarbiegunowy.this);
-        Pomoc.setContentView(R.layout.okno_pomocy);
-        Pomoc.setTitle("Okno pomocy");
-
-        ok = findViewById(R.id.bT_pomoc_ok);
-        ok.setEnabled(true);
-
-        obrazek = findViewById(R.id.iV_pomoc_obrazek);
-        obrazek.setImage/////////////////////////////////////////
-
-
-        ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Pomoc.cancel();
-            }
-        });
-
-        Pomoc.show();
-    }
 
 }

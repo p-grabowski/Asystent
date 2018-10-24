@@ -1,6 +1,7 @@
 package com.example.z370.asystent;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import static java.lang.Double.parseDouble;
 
 public class domiarprostokatny extends Activity {
 
-    Button oblicz, zapisz, wroc;
+    Button oblicz, zapisz, wroc, pomoc;
     EditText Ax, Ay, Bx, By, l, h;
     TextView Px, Py;
 
@@ -25,6 +26,7 @@ public class domiarprostokatny extends Activity {
         oblicz = findViewById(R.id.B_oblicz_domiarprost);
         zapisz = findViewById(R.id.B_zapisz_domiarprost);
         wroc = findViewById(R.id.B_wroc2);
+        pomoc = findViewById(R.id.bT_pomoc_domiarprost);
 
         Ax = findViewById(R.id.eT_AX_domiarprost);
         Ay = findViewById(R.id.eT_AY_domiarprost);
@@ -66,10 +68,24 @@ public class domiarprostokatny extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Obliczenia.class));
 
             }
         });
 
+        pomoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pomoc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Dialog Pomoc;
+                        Pomoc = new Dialog(domiarprostokatny.this);
+                        Pomoc.setContentView(R.layout.pomoc_prostokatny);
+                        Pomoc.show();
+                    }
+                });
+            }
+        });
     }
 }

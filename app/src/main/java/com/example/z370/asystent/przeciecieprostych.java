@@ -1,6 +1,7 @@
 package com.example.z370.asystent;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import static java.lang.Double.parseDouble;
 
 public class przeciecieprostych extends Activity {
 
-    Button oblicz, zapisz, wroc;
+    Button oblicz, zapisz, wroc, pomoc;
     EditText Ax, Ay, Bx, By, Cx, Cy, Dx, Dy;
     TextView Px, Py;
 
@@ -25,6 +26,7 @@ public class przeciecieprostych extends Activity {
         oblicz = findViewById(R.id.B_oblicz_przeciecie);
         zapisz = findViewById(R.id.B_zapisz_przeciecie);
         wroc = findViewById(R.id.B_wroc6);
+        pomoc = findViewById(R.id.bT_pomoc_przeciecie);
 
         Ax = findViewById(R.id.eT_AX_przeciecie);
         Ay = findViewById(R.id.eT_AY_przeciecie);
@@ -70,10 +72,24 @@ public class przeciecieprostych extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Obliczenia.class));
 
             }
         });
 
+        pomoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pomoc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Dialog Pomoc;
+                        Pomoc = new Dialog(przeciecieprostych.this);
+                        Pomoc.setContentView(R.layout.pomoc_przeciecieprostych);
+                        Pomoc.show();
+                    }
+                });
+            }
+        });
     }
 }

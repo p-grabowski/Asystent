@@ -1,6 +1,7 @@
 package com.example.z370.asystent;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import static java.lang.Double.parseDouble;
 
 public class katclp extends Activity {
 
-    Button oblicz, wroc;
+    Button oblicz, wroc, pomoc;
     EditText Cx, Cy, Lx, Ly, Px, Py;
     TextView W;
 
@@ -24,6 +25,7 @@ public class katclp extends Activity {
 
         oblicz = findViewById(R.id.B_oblicz_katclp);
         wroc = findViewById(R.id.B_wroc5);
+        pomoc = findViewById(R.id.bT_pomoc_katclp);
 
         Cx = findViewById(R.id.eT_CX_katclp);
         Cy = findViewById(R.id.eT_CY_katclp);
@@ -65,10 +67,23 @@ public class katclp extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Obliczenia.class));
 
             }
         });
-
+        pomoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pomoc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Dialog Pomoc;
+                        Pomoc = new Dialog(katclp.this);
+                        Pomoc.setContentView(R.layout.pomoc_katclp);
+                        Pomoc.show();
+                    }
+                });
+            }
+        });
     }
 }
