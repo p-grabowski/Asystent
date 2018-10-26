@@ -13,7 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import static android.text.TextUtils.isEmpty;
 import static java.lang.Double.parseDouble;
 
 public class domiarbiegunowy extends Activity {
@@ -48,23 +50,33 @@ public class domiarbiegunowy extends Activity {
             @Override
             public void onClick(View v) {
 
-                FunkcjeObliczenia.Punkt A = new FunkcjeObliczenia.Punkt();
-                FunkcjeObliczenia.Punkt B = new FunkcjeObliczenia.Punkt();
-                FunkcjeObliczenia.Punkt P = new FunkcjeObliczenia.Punkt();
+                if (    isEmpty(Ax.getText()) ||
+                        isEmpty(Ay.getText()) ||
+                        isEmpty(Bx.getText()) ||
+                        isEmpty(By.getText()) ||
+                        isEmpty(a.getText()) ||
+                        isEmpty(d.getText())) {
+                    Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pola!", Toast.LENGTH_SHORT).show();
+                } else {
 
-                double ea, ed;
+                    FunkcjeObliczenia.Punkt A = new FunkcjeObliczenia.Punkt();
+                    FunkcjeObliczenia.Punkt B = new FunkcjeObliczenia.Punkt();
+                    FunkcjeObliczenia.Punkt P = new FunkcjeObliczenia.Punkt();
 
-                A.X = parseDouble(String.valueOf(Ax.getText()));
-                A.Y = parseDouble(String.valueOf(Ay.getText()));
-                B.X = parseDouble(String.valueOf(Bx.getText()));
-                B.Y = parseDouble(String.valueOf(By.getText()));
-                ea = parseDouble(String.valueOf(a.getText()));
-                ed = parseDouble(String.valueOf(d.getText()));
+                    double ea, ed;
 
-                P = FunkcjeObliczenia.domiarbiegunowy(A, B, ed, ea);
+                    A.X = parseDouble(String.valueOf(Ax.getText()));
+                    A.Y = parseDouble(String.valueOf(Ay.getText()));
+                    B.X = parseDouble(String.valueOf(Bx.getText()));
+                    B.Y = parseDouble(String.valueOf(By.getText()));
+                    ea = parseDouble(String.valueOf(a.getText()));
+                    ed = parseDouble(String.valueOf(d.getText()));
 
-                Px.setText("P X = "+P.X);
-                Py.setText("P Y = "+P.Y);
+                    P = FunkcjeObliczenia.domiarbiegunowy(A, B, ed, ea);
+
+                    Px.setText("P X = " + FunkcjeObliczenia.zaokraglij(P.X, 3));
+                    Py.setText("P Y = " + FunkcjeObliczenia.zaokraglij(P.Y, 3));
+                }
             }
         });
 

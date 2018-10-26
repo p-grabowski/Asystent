@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import static android.text.TextUtils.isEmpty;
 import static java.lang.Double.parseDouble;
 
 public class przeciecieprostych extends Activity {
@@ -44,26 +46,39 @@ public class przeciecieprostych extends Activity {
             @Override
             public void onClick(View v) {
 
-                FunkcjeObliczenia.Punkt A = new FunkcjeObliczenia.Punkt();
-                FunkcjeObliczenia.Punkt B = new FunkcjeObliczenia.Punkt();
-                FunkcjeObliczenia.Punkt C = new FunkcjeObliczenia.Punkt();
-                FunkcjeObliczenia.Punkt D = new FunkcjeObliczenia.Punkt();
+                if (isEmpty(Ax.getText()) ||
+                        isEmpty(Ay.getText()) ||
+                        isEmpty(Bx.getText()) ||
+                        isEmpty(By.getText()) ||
+                        isEmpty(Cx.getText()) ||
+                        isEmpty(Cy.getText()) ||
+                        isEmpty(Dx.getText()) ||
+                        isEmpty(Dy.getText())
+                        ) {
+                    Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pola!", Toast.LENGTH_SHORT).show();
+                } else {
 
-                FunkcjeObliczenia.Punkt P = new FunkcjeObliczenia.Punkt();
+                    FunkcjeObliczenia.Punkt A = new FunkcjeObliczenia.Punkt();
+                    FunkcjeObliczenia.Punkt B = new FunkcjeObliczenia.Punkt();
+                    FunkcjeObliczenia.Punkt C = new FunkcjeObliczenia.Punkt();
+                    FunkcjeObliczenia.Punkt D = new FunkcjeObliczenia.Punkt();
 
-                A.X = parseDouble(String.valueOf(Ax.getText()));
-                A.Y = parseDouble(String.valueOf(Ay.getText()));
-                B.X = parseDouble(String.valueOf(Bx.getText()));
-                B.Y = parseDouble(String.valueOf(By.getText()));
-                C.X = parseDouble(String.valueOf(Cx.getText()));
-                C.Y = parseDouble(String.valueOf(Cy.getText()));
-                D.X = parseDouble(String.valueOf(Dx.getText()));
-                D.Y = parseDouble(String.valueOf(Dy.getText()));
+                    FunkcjeObliczenia.Punkt P = new FunkcjeObliczenia.Punkt();
 
-                P = FunkcjeObliczenia.przeciecieprostych(A, B, C, D);//////////////////
+                    A.X = parseDouble(String.valueOf(Ax.getText()));
+                    A.Y = parseDouble(String.valueOf(Ay.getText()));
+                    B.X = parseDouble(String.valueOf(Bx.getText()));
+                    B.Y = parseDouble(String.valueOf(By.getText()));
+                    C.X = parseDouble(String.valueOf(Cx.getText()));
+                    C.Y = parseDouble(String.valueOf(Cy.getText()));
+                    D.X = parseDouble(String.valueOf(Dx.getText()));
+                    D.Y = parseDouble(String.valueOf(Dy.getText()));
 
-                Px.setText("P X = "+ P.X);
-                Py.setText("P Y = "+ P.Y);
+                    P = FunkcjeObliczenia.przeciecieprostych(A, B, C, D);
+
+                    Px.setText("P X = " + FunkcjeObliczenia.zaokraglij(P.X, 3));
+                    Py.setText("P Y = " + FunkcjeObliczenia.zaokraglij(P.Y, 3));
+                }
             }
         });
 

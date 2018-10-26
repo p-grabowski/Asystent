@@ -15,7 +15,7 @@
             android:id="@+id/odleglosc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Odleglosc"
+            android:text="Odległość"
             android:textSize="30dp"
             android:textColor="#0f0f0f"
             />
@@ -31,7 +31,7 @@
             android:id="@+id/domiarprost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="domiar prost"
+            android:text="domiar prostopadły"
             android:textSize="30dp"
             android:textColor="#0f0f0f"
             />
@@ -39,7 +39,7 @@
             android:id="@+id/domiarbieg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="domiar bieg"
+            android:text="domiar biegunowy"
             android:textSize="30dp"
             android:textColor="#0f0f0f"
             />
@@ -93,11 +93,12 @@
             />
         <Button
             android:id="@+id/wroc"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="wróć"
-            android:textSize="30dp"
+            android:textSize="15dp"
             android:textColor="#0f0f0f"
+            android:layout_gravity="center"
             />
     </LinearLayout>
 </ScrollView>

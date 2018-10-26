@@ -30,6 +30,16 @@ public class FunkcjeObliczenia {
 
             }
 
+    public static String zaokraglij(double a, int x){ //zaokrąglanie liczby a do x miejsc po przecinku
+
+        java.text.DecimalFormat df = new java.text.DecimalFormat();
+        df.setMaximumFractionDigits(x);
+        df.setMinimumFractionDigits(2);
+
+        return df.format(a);
+    }
+
+
    public static double odleglosc(Punkt A, Punkt B){
 
         double wynik=0;
@@ -41,7 +51,7 @@ public class FunkcjeObliczenia {
     public static double spadek(Punkt A, Punkt B){
         double wynik=0;
 
-        wynik = (B.H - A.H)/odleglosc(A, B);
+        wynik = (B.H - A.H)/odleglosc(A, B) * 100;
 
         return wynik;
     }
@@ -175,6 +185,10 @@ public class FunkcjeObliczenia {
         return P;
     }
 
+
+
+
+///http://poradnik-informatyka.com/2014/10/25/dodawanie-modyfikacja-pliku-karcie-pamieci-android/
 
 
 }

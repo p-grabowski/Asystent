@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import static android.text.TextUtils.isEmpty;
 import static java.lang.Double.parseDouble;
 
 public class spadek extends Activity {
@@ -40,20 +42,30 @@ public class spadek extends Activity {
             @Override
             public void onClick(View v) {
 
-                FunkcjeObliczenia.Punkt A = new FunkcjeObliczenia.Punkt();
-                FunkcjeObliczenia.Punkt B = new FunkcjeObliczenia.Punkt();
+                if (isEmpty(Ax.getText()) ||
+                        isEmpty(Ay.getText()) ||
+                        isEmpty(Bx.getText()) ||
+                        isEmpty(By.getText()) ||
+                        isEmpty(Ah.getText()) ||
+                        isEmpty(Bh.getText())
+                        ) {
+                    Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pola!", Toast.LENGTH_SHORT).show();
+                } else {
 
-                A.X = parseDouble(String.valueOf(Ax.getText()));
-                A.Y = parseDouble(String.valueOf(Ay.getText()));
-                A.H = parseDouble(String.valueOf(Ah.getText()));
+                    FunkcjeObliczenia.Punkt A = new FunkcjeObliczenia.Punkt();
+                    FunkcjeObliczenia.Punkt B = new FunkcjeObliczenia.Punkt();
 
-                B.X = parseDouble(String.valueOf(Bx.getText()));
-                B.Y = parseDouble(String.valueOf(By.getText()));
-                B.H = parseDouble(String.valueOf(Bh.getText()));
+                    A.X = parseDouble(String.valueOf(Ax.getText()));
+                    A.Y = parseDouble(String.valueOf(Ay.getText()));
+                    A.H = parseDouble(String.valueOf(Ah.getText()));
 
-                odleglosc.setText("Odległość A-B: "+FunkcjeObliczenia.odleglosc(A, B));
-                spadek.setText("Spadek A-B: "+FunkcjeObliczenia.spadek(A,B));
+                    B.X = parseDouble(String.valueOf(Bx.getText()));
+                    B.Y = parseDouble(String.valueOf(By.getText()));
+                    B.H = parseDouble(String.valueOf(Bh.getText()));
 
+                    odleglosc.setText("Odległość A-B: " + FunkcjeObliczenia.zaokraglij(FunkcjeObliczenia.odleglosc(A, B), 3) + " m");
+                    spadek.setText("Spadek A-B: " + FunkcjeObliczenia.zaokraglij(FunkcjeObliczenia.spadek(A, B), 2) + " %");
+                }
             }
         });
 

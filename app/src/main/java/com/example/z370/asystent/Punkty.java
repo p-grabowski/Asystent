@@ -39,17 +39,15 @@ public class Punkty extends Activity {
         PunktyLista punktylsta = new PunktyLista();
 
         FunkcjeObliczenia.Punkt nowypunkt = new FunkcjeObliczenia.Punkt();
-        nowypunkt.H = 125;
         nowypunkt.Nazwa = "123123";
         nowypunkt.Y = 123;
         nowypunkt.X = 134;
-        
+        nowypunkt.H = 125;
+
         punktylsta.ListaPunktow.add(nowypunkt);
 
 
 
-
-        // Register the ListView  for Context menu
         registerForContextMenu(listView);
     }
 

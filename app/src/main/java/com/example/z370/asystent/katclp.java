@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import static android.text.TextUtils.isEmpty;
 import static java.lang.Double.parseDouble;
 
 public class katclp extends Activity {
@@ -41,6 +43,17 @@ public class katclp extends Activity {
             @Override
             public void onClick(View v) {
 
+                if(     isEmpty(Cx.getText()) ||
+                        isEmpty(Cy.getText()) ||
+                        isEmpty(Lx.getText()) ||
+                        isEmpty(Ly.getText()) ||
+                        isEmpty(Px.getText()) ||
+                        isEmpty(Py.getText()))
+                {
+                    Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pola!",Toast.LENGTH_SHORT).show();
+                }
+                else{
+
                 FunkcjeObliczenia.Punkt C = new FunkcjeObliczenia.Punkt();
                 FunkcjeObliczenia.Punkt L = new FunkcjeObliczenia.Punkt();
                 FunkcjeObliczenia.Punkt P = new FunkcjeObliczenia.Punkt();
@@ -57,8 +70,8 @@ public class katclp extends Activity {
 
                 w = FunkcjeObliczenia.katCLP(C, L, P);
 
-                W.setText("Kąt = "+w);
-
+                W.setText("Kąt = " + FunkcjeObliczenia.zaokraglij(w, 4));
+            }
             }
         });
 
