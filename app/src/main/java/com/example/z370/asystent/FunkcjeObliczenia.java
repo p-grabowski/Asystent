@@ -1,6 +1,15 @@
 package com.example.z370.asystent;
 
 
+import android.content.Context;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.List;
 
 import static java.lang.Math.abs;
@@ -59,7 +68,7 @@ public class FunkcjeObliczenia {
     public static double azymut(Punkt A, Punkt B){
 
         double wynik=0, wynik2=0;
-        wynik = toDegrees(atan(abs((B.Y-A.Y)/(B.X-A.X)))); ////Sprawdzić wynik
+        wynik = toDegrees(atan(abs((B.Y-A.Y)/(B.X-A.X))));
         double dx,dy;
         dx=B.X-A.X;
         dy=B.Y-A.Y;
@@ -162,10 +171,11 @@ public class FunkcjeObliczenia {
         return P;
     }
 
-    public static Punkt wcieciewstecz (Punkt A, Punkt B, Punkt C, double a, double b){
+    public static Punkt wcieciewstecz (Punkt A, Punkt B, Punkt C, double b, double a){
         Punkt P = new Punkt();
 
         double f1, f2, F1, F2, F0, dx, dy;
+
 
         a = 1 / tan(toRadians(a)); // ctg a
         b = 1 / tan(toRadians(b)); // ctg b
@@ -184,11 +194,34 @@ public class FunkcjeObliczenia {
 
         return P;
     }
+    public boolean saveFile(Context context, String fileName, String text){
+        try {
+            FileOutputStream fos = context.openFileOutput(context.getFilesDir().getAbsolutePath() + "/" + fileName +".txt",Context.MODE_PRIVATE);
+            Writer out = new OutputStreamWriter(fos);
+            out.write(text);
+            out.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
-
-
-
-///http://poradnik-informatyka.com/2014/10/25/dodawanie-modyfikacja-pliku-karcie-pamieci-android/
-
+    public String load(Context context, String fileName){
+        try {
+            FileInputStream fis = context.openFileInput(context.getFilesDir().getAbsolutePath() + "/" + fileName + ".txt");
+            BufferedReader r = new BufferedReader(new InputStreamReader(fis));
+            String s = "";
+            String txt = "";
+            while ((s = r.readLine()) != null) {
+                txt += s;
+            }
+            r.close();
+            return txt;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 }
