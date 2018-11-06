@@ -18,6 +18,7 @@ public class MainActivity extends Activity {
     obliczenia = findViewById(R.id.obliczenia);
 
 punkty.setEnabled(false);
+obliczenia.setEnabled(true);
 
         punkty.setOnClickListener(new View.OnClickListener() {
             @Override

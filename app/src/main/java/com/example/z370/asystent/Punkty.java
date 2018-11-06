@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,7 +22,18 @@ import com.example.z370.asystent.FunkcjeObliczenia.PunktyLista;
 
 import java.util.ArrayList;
 
+import static java.lang.Double.parseDouble;
+
 public class Punkty extends Activity {
+
+BazaPunktow baza;
+
+EditText X,Y,H,NAZWA;
+Button dodaj;
+TextView punkt;
+
+double x,y,h;
+String nazwa;
 
     ListView listView;
     String number[]={"1","2","3","4","5","6","7","1","2","3","4","5","6","7","1","2","3","4","5","6","7"};
@@ -31,6 +44,44 @@ public class Punkty extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_punkty);
+
+        baza = new BazaPunktow(this);
+
+
+NAZWA = findViewById(R.id.eT_NAZWA);
+X = findViewById(R.id.eT_X);
+Y = findViewById(R.id.eT_Y);
+H = findViewById(R.id.eT_H);
+dodaj = findViewById(R.id.bT_punkty_dodaj);
+punkt = findViewById(R.id.tV_dodaj);
+
+
+dodaj.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+
+        x = parseDouble(String.valueOf(X.getText()));
+        y = parseDouble(String.valueOf(Y.getText()));
+        h = parseDouble(String.valueOf(H.getText()));
+        nazwa = String.valueOf(NAZWA.getText());
+
+
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         listView=(ListView)findViewById(R.id.lV_punkty);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,number);
         listView.setAdapter(adapter);
@@ -38,14 +89,14 @@ public class Punkty extends Activity {
 
         PunktyLista punktylsta = new PunktyLista();
 
-        FunkcjeObliczenia.Punkt nowypunkt = new FunkcjeObliczenia.Punkt();
+/*        FunkcjeObliczenia.Punkt nowypunkt = new FunkcjeObliczenia.Punkt();
         nowypunkt.Nazwa = "123123";
         nowypunkt.Y = 123;
         nowypunkt.X = 134;
         nowypunkt.H = 125;
 
         punktylsta.ListaPunktow.add(nowypunkt);
-
+*/
 
 
         registerForContextMenu(listView);

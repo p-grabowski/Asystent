@@ -17,6 +17,48 @@
     android:textSize="30dp"
     android:id="@+id/bT_punkty_dodaj"
     />
+    <EditText
+        android:id="@+id/eT_NAZWA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="NAZWA"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff"/>
+    <EditText
+        android:id="@+id/eT_X"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="X"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff"/>
+    <EditText
+        android:id="@+id/eT_Y"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Y"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff"/>
+    <EditText
+        android:id="@+id/eT_H"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="H"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:id="@+id/tV_dodaj"
+        android:hint="punkt: "
+        />
+
+
+
+
 
     <ListView
         android:id="@+id/lV_punkty"

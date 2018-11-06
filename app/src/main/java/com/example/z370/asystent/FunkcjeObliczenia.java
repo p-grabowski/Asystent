@@ -194,34 +194,4 @@ public class FunkcjeObliczenia {
 
         return P;
     }
-    public boolean saveFile(Context context, String fileName, String text){
-        try {
-            FileOutputStream fos = context.openFileOutput(context.getFilesDir().getAbsolutePath() + "/" + fileName +".txt",Context.MODE_PRIVATE);
-            Writer out = new OutputStreamWriter(fos);
-            out.write(text);
-            out.close();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    public String load(Context context, String fileName){
-        try {
-            FileInputStream fis = context.openFileInput(context.getFilesDir().getAbsolutePath() + "/" + fileName + ".txt");
-            BufferedReader r = new BufferedReader(new InputStreamReader(fis));
-            String s = "";
-            String txt = "";
-            while ((s = r.readLine()) != null) {
-                txt += s;
-            }
-            r.close();
-            return txt;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
 }
