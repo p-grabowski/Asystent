@@ -2,6 +2,7 @@ package com.example.z370.asystent;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -23,7 +24,7 @@ public class BazaPunktow extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-db.execSQL("CREATE TABLE " + Table_name + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, NAZWA TEXT, X DOUBLE(8,3), Y DOUBLE(8,3), H DOUBLE(4,3));");
+db.execSQL("CREATE TABLE " + Table_name + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, Nazwa TEXT, X DOUBLE(8,3), Y DOUBLE(8,3), H DOUBLE(4,3));");
     }
 
     @Override
@@ -32,7 +33,7 @@ db.execSQL("DROP TABLE IF EXISTS " + Table_name);
 onCreate(db);
     }
 
-    public boolean dodaj( String nazwa, double x, double y, double h){
+    public boolean dodajpunkt( String nazwa, double x, double y, double h){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, nazwa);
@@ -44,5 +45,11 @@ onCreate(db);
             return false;
         else
             return true;
+    }
+
+    public Cursor getAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+Table_name, null);
+        return res;
     }
 }

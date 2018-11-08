@@ -45,6 +45,14 @@
         android:hint="H"
         android:inputType="numberDecimal"
         android:textColorHint="#0000ff"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pokaż"
+        android:textColor="#0000ff"
+        android:textSize="30dp"
+        android:id="@+id/bT_punkty_pokaz"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

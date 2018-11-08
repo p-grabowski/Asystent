@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
     punkty = findViewById(R.id.punkty);
     obliczenia = findViewById(R.id.obliczenia);
 
-punkty.setEnabled(false);
+punkty.setEnabled(true);
 obliczenia.setEnabled(true);
 
         punkty.setOnClickListener(new View.OnClickListener() {
