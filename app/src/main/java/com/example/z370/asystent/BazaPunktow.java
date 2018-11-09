@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class BazaPunktow extends SQLiteOpenHelper {
 
     public static final String DB_name = "Punkty.db";
-    public static final String Table_name = "punkty_table1";
+    public static final String Table_name = "punkty_table";
     public static final String COL_1 = "ID";
     public static final String COL_2 = "Nazwa";
     public static final String COL_3 = "X";
