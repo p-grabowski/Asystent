@@ -11,14 +11,23 @@
         tools:context=".Punkty"
         android:orientation="vertical">
 
+        <ListView
+            android:id="@+id/lV_punkty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:isScrollContainer="true"></ListView>
+
         <Button
+            android:id="@+id/bT_punkty_dodaj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="dodaj punkt"
             android:textColor="#0000ff"
-            android:textSize="20dp"
-            android:id="@+id/bT_punkty_dodaj"
-        />
+            android:textSize="20dp" />
+
         <EditText
             android:id="@+id/eT_NAZWA"
             android:layout_width="match_parent"
@@ -54,14 +63,7 @@
             android:hint="ID"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff"/>
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="pokaż"
-            android:textColor="#0000ff"
-            android:textSize="20dp"
-            android:id="@+id/bT_punkty_pokaz"
-            />
+
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -78,21 +80,6 @@
             android:textSize="20dp"
             android:id="@+id/bT_punkty_usun"
             />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="10dp"
-            android:textSize="20dp"
-            android:id="@+id/tV_dodaj"
-            android:hint="punkt: "
-            />
-        <ListView
-            android:id="@+id/lV_punkty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp">
-        </ListView>
+
     </LinearLayout>
 </ScrollView>

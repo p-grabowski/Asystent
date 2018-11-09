@@ -29,15 +29,14 @@ public class FunkcjeObliczenia {
         public double X=0;
         public double Y=0;
         public double H=0;
+        public int id;
             }
 
-            public static class PunktyLista{
+public static String kropka(String X){
+    X = X.replace(",", ".");
+    return X;
+}
 
-                public List<Punkt> ListaPunktow;
-
-
-
-            }
 
     public static String zaokraglij(double a, int x){ //zaokrąglanie liczby a do x miejsc po przecinku
 

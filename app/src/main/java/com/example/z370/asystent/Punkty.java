@@ -22,8 +22,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.z370.asystent.FunkcjeObliczenia.PunktyLista;
-
 import java.util.ArrayList;
 
 import static android.text.TextUtils.isEmpty;
@@ -31,15 +29,11 @@ import static java.lang.Double.parseDouble;
 
 public class Punkty extends Activity {
 
-BazaPunktow baza;
+static BazaPunktow baza;
 
 EditText X,Y,H,NAZWA, ID;
 Button dodaj;
-TextView punkt, pokaz, zmien,usun;
-
-    ListView listView;
-    String number[]={"1","2","3","4","5","6","7","1","2","3","4","5","6","7","1","2","3","4","5","6","7"};
-
+TextView punkt, zmien,usun;
 
 
     @Override
@@ -56,8 +50,6 @@ TextView punkt, pokaz, zmien,usun;
         H = findViewById(R.id.eT_H);
         ID = findViewById(R.id.eT_ID);
         dodaj = findViewById(R.id.bT_punkty_dodaj);
-        punkt = findViewById(R.id.tV_dodaj);
-        pokaz = findViewById(R.id.bT_punkty_pokaz);
         zmien = findViewById(R.id.bT_punkty_zmien);
         usun = findViewById(R.id.bT_punkty_usun);
 
@@ -74,13 +66,6 @@ TextView punkt, pokaz, zmien,usun;
                 } else
                 DodajDane();
 
-            }
-        });
-
-        pokaz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PokazDane();
             }
         });
 
@@ -114,18 +99,12 @@ TextView punkt, pokaz, zmien,usun;
         ListView listView = findViewById(R.id.lV_punkty);
 
         Cursor punktyCursor = baza.pokazcalabaze();
-
-// Setup cursor adapter using cursor from last step
         PuntyAdapter PunktyAdapter = new PuntyAdapter(this, punktyCursor);
-// Attach cursor adapter to the ListView
         listView.setAdapter(PunktyAdapter);
 
         registerForContextMenu(listView);
 
-        PunktyAdapter.changeCursor(punktyCursor); // Przełącz na nowy kursor i aktualizuj zawartość ListView
-
-
-
+      //  PunktyAdapter.changeCursor(punktyCursor); // Przełącz na nowy kursor i aktualizuj zawartość ListView
 
     }
 
@@ -164,30 +143,6 @@ TextView punkt, pokaz, zmien,usun;
             Toast.makeText(Punkty.this,"Punkt nie Dodany", Toast.LENGTH_LONG).show();
     }
 
-    public void PokazDane() {
-        Cursor res = baza.pokazcalabaze();
-        if (res.getCount() == 0) {
-            ShowMessage("Error","Pusta lista");
-            return;
-        }
-        StringBuffer buffer = new StringBuffer();
-        while (res.moveToNext()) {
-            buffer.append("Id: " + res.getString(0) + "\n");
-            buffer.append("Nazwa: " + res.getString(1) + "\n");
-            buffer.append("X: " + res.getString(2) + "\n");
-            buffer.append("Y: " + res.getString(3) + "\n");
-            buffer.append("H: " + res.getString(4) + "\n\n");
-        }
-        ShowMessage("Dane", buffer.toString());
-    }
-
-    public void ShowMessage(String tittle,String message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(tittle);
-        builder.setMessage(message);
-        builder.show();
-    }
 
     public void ZmienDane(){
         boolean isUpdate = baza.zmienpunkt(
@@ -202,6 +157,7 @@ TextView punkt, pokaz, zmien,usun;
         else
             Toast.makeText(Punkty.this,"Punkt nie Zmieniony", Toast.LENGTH_LONG).show();
     }
+
     public void UsunDane(){
         Integer  usuwanyWiersz = baza.usunpunkt(ID.getText().toString());
         if (usuwanyWiersz > 0)

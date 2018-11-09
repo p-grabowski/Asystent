@@ -9,6 +9,7 @@ import android.widget.Button;
 public class Obliczenia extends Activity {
 
     Button odleglosc, spadek, domiarprost, domiarbieg, katclp, przeciecie, punkt, liniowe, wprzod, wstecz, wroc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,5 +104,9 @@ public class Obliczenia extends Activity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
+    }
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 }

@@ -3,32 +3,33 @@ package com.example.z370.asystent;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.text.TextUtils.isEmpty;
+import static com.example.z370.asystent.Punkty.baza;
 import static java.lang.Double.parseDouble;
 
 public class domiarbiegunowy extends Activity {
 
     Button oblicz, zapisz, wroc, pomoc;
-    EditText Ax, Ay, Bx, By, a, d;
+    EditText Ax, Ay, Bx, By, a, d, nazwa_P;
+    AutoCompleteTextView nazwa_A, nazwa_B;
     TextView Px, Py;
     Dialog Pomoc;
+    boolean dodany;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_domiarbiegunowy);
+
+        baza = new BazaPunktow(this);
 
         oblicz = findViewById(R.id.B_oblicz_domiarbieg);
         zapisz = findViewById(R.id.B_zapisz_domiarbieg);
@@ -45,6 +46,9 @@ public class domiarbiegunowy extends Activity {
         Px = findViewById(R.id.tV_PX_domiarbieg);
         Py = findViewById(R.id.tV_PY_domiarbieg);
 
+        nazwa_A = findViewById(R.id.eT_nazwa_A_domiarbieg);
+        nazwa_B = findViewById(R.id.eT_nazwa_B_domiarbieg);
+        nazwa_P =findViewById(R.id.eT_nazwa_P_domiarbieg);
 
         oblicz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,8 +78,8 @@ public class domiarbiegunowy extends Activity {
 
                     P = FunkcjeObliczenia.domiarbiegunowy(A, B, ed, ea);
 
-                    Px.setText("P X = " + FunkcjeObliczenia.zaokraglij(P.X, 3));
-                    Py.setText("P Y = " + FunkcjeObliczenia.zaokraglij(P.Y, 3));
+                    Px.setText(FunkcjeObliczenia.kropka(FunkcjeObliczenia.zaokraglij(P.X, 3)));
+                    Py.setText(FunkcjeObliczenia.kropka(FunkcjeObliczenia.zaokraglij(P.Y, 3)));
                 }
             }
         });
@@ -103,11 +107,26 @@ public class domiarbiegunowy extends Activity {
                 });
             }
         });
+
+        zapisz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (isEmpty(nazwa_P.getText())) {
+                    Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pola (Nazwa)!", Toast.LENGTH_SHORT).show();
+                } else
+                dodany = baza.dodajpunkt(nazwa_P.getText().toString(), parseDouble(String.valueOf(Px.getText())), parseDouble(String.valueOf(Py.getText())), 0);
+                if(dodany == true)
+                    Toast.makeText(domiarbiegunowy.this,"Punkt Zapisany", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(domiarbiegunowy.this,"Punkt nie Zapisany", Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
     @Override
     public void onBackPressed() {
         finish();
         startActivity(new Intent(getApplicationContext(), Obliczenia.class));
     }
-
 }
