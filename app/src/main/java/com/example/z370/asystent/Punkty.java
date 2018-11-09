@@ -30,9 +30,9 @@ public class Punkty extends Activity {
 
 BazaPunktow baza;
 
-EditText X,Y,H,NAZWA;
+EditText X,Y,H,NAZWA, ID;
 Button dodaj;
-TextView punkt, pokaz;
+TextView punkt, pokaz, zmien,usun;
 
     ListView listView;
     String number[]={"1","2","3","4","5","6","7","1","2","3","4","5","6","7","1","2","3","4","5","6","7"};
@@ -51,21 +51,16 @@ NAZWA = findViewById(R.id.eT_NAZWA);
 X = findViewById(R.id.eT_X);
 Y = findViewById(R.id.eT_Y);
 H = findViewById(R.id.eT_H);
+ID = findViewById(R.id.eT_ID);
 dodaj = findViewById(R.id.bT_punkty_dodaj);
 punkt = findViewById(R.id.tV_dodaj);
 pokaz = findViewById(R.id.bT_punkty_pokaz);
+zmien = findViewById(R.id.bT_punkty_zmien);
+usun = findViewById(R.id.bT_punkty_usun);
 
 DodajDane();
 PokazDane();
-
-
-
-
-
-
-
-
-
+UpdateData();
 
 
 
@@ -75,19 +70,6 @@ PokazDane();
         listView=(ListView)findViewById(R.id.lV_punkty);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,number);
         listView.setAdapter(adapter);
-
-
-        PunktyLista punktylsta = new PunktyLista();
-
-/*        FunkcjeObliczenia.Punkt nowypunkt = new FunkcjeObliczenia.Punkt();
-        nowypunkt.Nazwa = "123123";
-        nowypunkt.Y = 123;
-        nowypunkt.X = 134;
-        nowypunkt.H = 125;
-
-        punktylsta.ListaPunktow.add(nowypunkt);
-*/
-
 
         registerForContextMenu(listView);
     }
@@ -113,6 +95,7 @@ PokazDane();
         }
         return true;
     }
+
     public void DodajDane(){
         dodaj.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,11 +135,31 @@ return;
             }
         });
     }
+
     public void ShowMessage(String tittle,String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle(tittle);
         builder.setMessage(message);
         builder.show();
+    }
+
+    public void UpdateData(){
+        zmien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isUpdate = baza.UpdateData(
+                        ID.getText().toString(),
+                        NAZWA.getText().toString(),
+                        parseDouble(String.valueOf(X.getText())),
+                        parseDouble(String.valueOf(Y.getText())),
+                        parseDouble(String.valueOf(H.getText()))
+                );
+                if(isUpdate == true)
+                    Toast.makeText(Punkty.this,"Punkt Zmieniony", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(Punkty.this,"Punkt nie Zmieniony", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

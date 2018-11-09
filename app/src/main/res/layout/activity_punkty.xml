@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -45,6 +46,13 @@
         android:hint="H"
         android:inputType="numberDecimal"
         android:textColorHint="#0000ff"/>
+    <EditText
+        android:id="@+id/eT_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +60,22 @@
         android:textColor="#0000ff"
         android:textSize="30dp"
         android:id="@+id/bT_punkty_pokaz"
+        />
+    <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="zamień"
+    android:textColor="#0000ff"
+    android:textSize="30dp"
+    android:id="@+id/bT_punkty_zmien"
+    />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="usun"
+        android:textColor="#0000ff"
+        android:textSize="30dp"
+        android:id="@+id/bT_punkty_usun"
         />
     <TextView
         android:layout_width="match_parent"
