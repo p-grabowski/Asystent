@@ -1,104 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Punkty"
+        android:orientation="vertical">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Punkty"
-    android:orientation="vertical">
-
-
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="dodaj punkt"
-    android:textColor="#0000ff"
-    android:textSize="30dp"
-    android:id="@+id/bT_punkty_dodaj"
-    />
-    <EditText
-        android:id="@+id/eT_NAZWA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="NAZWA"
-        android:inputType="numberDecimal"
-        android:textColorHint="#0000ff"/>
-    <EditText
-        android:id="@+id/eT_X"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="X"
-        android:inputType="numberDecimal"
-        android:textColorHint="#0000ff"/>
-    <EditText
-        android:id="@+id/eT_Y"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Y"
-        android:inputType="numberDecimal"
-        android:textColorHint="#0000ff"/>
-    <EditText
-        android:id="@+id/eT_H"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="H"
-        android:inputType="numberDecimal"
-        android:textColorHint="#0000ff"/>
-    <EditText
-        android:id="@+id/eT_ID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ID"
-        android:inputType="numberDecimal"
-        android:textColorHint="#0000ff"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="pokaż"
-        android:textColor="#0000ff"
-        android:textSize="30dp"
-        android:id="@+id/bT_punkty_pokaz"
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dodaj punkt"
+            android:textColor="#0000ff"
+            android:textSize="20dp"
+            android:id="@+id/bT_punkty_dodaj"
         />
-    <Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="zamień"
-    android:textColor="#0000ff"
-    android:textSize="30dp"
-    android:id="@+id/bT_punkty_zmien"
-    />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="usun"
-        android:textColor="#0000ff"
-        android:textSize="30dp"
-        android:id="@+id/bT_punkty_usun"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="20dp"
-        android:id="@+id/tV_dodaj"
-        android:hint="punkt: "
-        />
-
-
-
-
-
-    <ListView
-        android:id="@+id/lV_punkty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp">
-
-    </ListView>
-
-
-</LinearLayout>
+        <EditText
+            android:id="@+id/eT_NAZWA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NAZWA"
+            android:inputType="numberDecimal"
+            android:textColorHint="#0000ff"/>
+        <EditText
+            android:id="@+id/eT_X"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="X"
+            android:inputType="numberDecimal"
+            android:textColorHint="#0000ff"/>
+        <EditText
+            android:id="@+id/eT_Y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Y"
+            android:inputType="numberDecimal"
+            android:textColorHint="#0000ff"/>
+        <EditText
+            android:id="@+id/eT_H"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="H"
+            android:inputType="numberDecimal"
+            android:textColorHint="#0000ff"/>
+        <EditText
+            android:id="@+id/eT_ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID"
+            android:inputType="numberDecimal"
+            android:textColorHint="#0000ff"/>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="pokaż"
+            android:textColor="#0000ff"
+            android:textSize="20dp"
+            android:id="@+id/bT_punkty_pokaz"
+            />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="zamień"
+            android:textColor="#0000ff"
+            android:textSize="20dp"
+            android:id="@+id/bT_punkty_zmien"
+            />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="usun"
+            android:textColor="#0000ff"
+            android:textSize="20dp"
+            android:id="@+id/bT_punkty_usun"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"
+            android:id="@+id/tV_dodaj"
+            android:hint="punkt: "
+            />
+        <ListView
+            android:id="@+id/lV_punkty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+        </ListView>
+    </LinearLayout>
+</ScrollView>

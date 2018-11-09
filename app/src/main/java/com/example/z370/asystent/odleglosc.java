@@ -92,4 +92,9 @@ Dialog Pomoc;
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(getApplicationContext(), Obliczenia.class));
+    }
 }

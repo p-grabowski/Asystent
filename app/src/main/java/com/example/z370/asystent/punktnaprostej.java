@@ -97,4 +97,9 @@ public class punktnaprostej extends Activity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(getApplicationContext(), Obliczenia.class));
+    }
 }

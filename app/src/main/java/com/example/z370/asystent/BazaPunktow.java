@@ -10,7 +10,7 @@ public class BazaPunktow extends SQLiteOpenHelper {
 
     public static final String DB_name = "Punkty.db";
     public static final String Table_name = "punkty_table";
-    public static final String COL_1 = "ID";
+    public static final String COL_1 = "_id";
     public static final String COL_2 = "Nazwa";
     public static final String COL_3 = "X";
     public static final String COL_4 = "Y";
@@ -24,7 +24,7 @@ public class BazaPunktow extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-db.execSQL("CREATE TABLE " + Table_name + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL_2 +" TEXT, "+ COL_3 +" DOUBLE(8,3), "+ COL_4 +" DOUBLE(8,3), "+ COL_5 +" DOUBLE(4,3));");
+db.execSQL("CREATE TABLE " + Table_name + "( _id INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL_2 +" TEXT, "+ COL_3 +" DOUBLE(8,3), "+ COL_4 +" DOUBLE(8,3), "+ COL_5 +" DOUBLE(4,3));");
     }
 
     @Override
@@ -32,6 +32,8 @@ db.execSQL("CREATE TABLE " + Table_name + "( ID INTEGER PRIMARY KEY AUTOINCREMEN
 db.execSQL("DROP TABLE IF EXISTS " + Table_name);
 onCreate(db);
     }
+
+
 
     public boolean dodajpunkt(String nazwa, double x, double y, double h){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -47,13 +49,13 @@ onCreate(db);
             return true;
     }
 
-    public Cursor getAllData(){
+    public Cursor pokazcalabaze(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+Table_name, null);
         return res;
     }
 
-    public boolean UpdateData(String id, String nazwa, double x, double y, double h){
+    public boolean zmienpunkt(String id, String nazwa, double x, double y, double h){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_1, id);
@@ -61,7 +63,12 @@ onCreate(db);
         contentValues.put(COL_3, x);
         contentValues.put(COL_4, y);
         contentValues.put(COL_5, h);
-        db.update(Table_name, contentValues, "ID = ?", new String[]{ id });
+        db.update(Table_name, contentValues, "_id = ?", new String[]{ id });
         return true;
+    }
+
+    public Integer usunpunkt(String  id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(Table_name, "_id = ?", new String[] { id });
     }
 }
