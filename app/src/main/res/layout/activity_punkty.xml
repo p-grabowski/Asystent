@@ -69,13 +69,6 @@ android:layout_height="wrap_content">
             android:hint="H"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff"/>
-        <EditText
-            android:id="@+id/eT_punkty_ID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Id"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff"/>
        <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -91,14 +84,6 @@ android:layout_height="wrap_content">
             android:textColor="#0000ff"
             android:textSize="15dp"
             android:id="@+id/bT_punkty_usun"
-            android:layout_gravity="center"/>
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="wyczyść liste"
-            android:textColor="#0000ff"
-            android:textSize="15dp"
-            android:id="@+id/bT_punkty_wyczysc"
             android:layout_gravity="center"/>
     </LinearLayout>
 </ScrollView>

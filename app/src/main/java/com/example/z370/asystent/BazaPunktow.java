@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import static com.example.z370.asystent.Punkty.baza;
+
 public class BazaPunktow extends SQLiteOpenHelper {
 
     public static final String DB_name = "Punkty.db";
@@ -73,9 +75,12 @@ onCreate(db);
         db.update(Table_name, contentValues, "_id = ?", new String[]{ id });
         return true;
     }
-
-    public Integer usunpunkt(String  id){
+    public Integer usunpunkt(String id){
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(Table_name, "_id = ?", new String[] { id });
+    }
+    public Integer usunpunktnazwa(String  Nazwa){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(Table_name, "Nazwa = ?", new String[] { Nazwa });
     }
 }
