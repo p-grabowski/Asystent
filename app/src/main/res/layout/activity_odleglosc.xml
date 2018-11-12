@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -31,7 +34,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Punkt A:" />
-
+    <AutoCompleteTextView
+        android:id="@+id/eT_nazwa_A_odl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
     <EditText
             android:id="@+id/eT_AX_odl"
             android:layout_width="match_parent"
@@ -53,7 +62,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Punkt B:" />
-
+    <AutoCompleteTextView
+        android:id="@+id/eT_nazwa_B_odl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
     <EditText
         android:id="@+id/eT_BX_odl"
         android:layout_width="match_parent"
@@ -102,4 +117,4 @@
         android:layout_height="wrap_content"
         android:text="Wróć"
         android:id="@+id/B_wroc1"/>
-</LinearLayout>
+</LinearLayout></ScrollView>

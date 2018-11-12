@@ -40,7 +40,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Punkt C:" />
-
+        <AutoCompleteTextView
+            android:id="@+id/eT_nazwa_C_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nazwa"
+            android:inputType="text"
+            android:textColorHint="#0000ff" />
         <EditText
             android:id="@+id/eT_CX_katclp"
             android:layout_width="match_parent"
@@ -61,7 +67,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Punkt L:" />
-
+        <AutoCompleteTextView
+            android:id="@+id/eT_nazwa_L_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nazwa"
+            android:inputType="text"
+            android:textColorHint="#0000ff" />
         <EditText
             android:id="@+id/eT_LX_katclp"
             android:layout_width="match_parent"
@@ -83,7 +95,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Punkt P:" />
-
+        <AutoCompleteTextView
+            android:id="@+id/eT_nazwa_P_katclp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nazwa"
+            android:inputType="text"
+            android:textColorHint="#0000ff" />
         <EditText
             android:id="@+id/eT_PX_katclp"
             android:layout_width="match_parent"

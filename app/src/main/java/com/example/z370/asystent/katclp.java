@@ -3,14 +3,21 @@ package com.example.z370.asystent;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import static android.text.TextUtils.isEmpty;
+import static com.example.z370.asystent.Punkty.baza;
 import static java.lang.Double.parseDouble;
 
 public class katclp extends Activity {
@@ -18,7 +25,7 @@ public class katclp extends Activity {
     Button oblicz, wroc, pomoc;
     EditText Cx, Cy, Lx, Ly, Px, Py;
     TextView W;
-
+AutoCompleteTextView nazwa_C, nazwa_L, nazwa_P;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,74 @@ public class katclp extends Activity {
 
         W = findViewById(R.id.tV_W_katclp);
 
+        nazwa_C = findViewById(R.id.eT_nazwa_C_katclp);
+        nazwa_L = findViewById(R.id.eT_nazwa_L_katclp);
+        nazwa_P = findViewById(R.id.eT_nazwa_P_katclp);
+
+        ////////////////////////     autouzupełniania
+        baza = new BazaPunktow(this);
+
+        Cursor nazwyCursor = baza.pokazcalabaze();
+        ArrayList<String> ListaNazw = new ArrayList<String>();
+        nazwyCursor.moveToFirst();
+        while(!nazwyCursor.isAfterLast()) {
+            ListaNazw.add(nazwyCursor.getString(nazwyCursor.getColumnIndex("Nazwa")));
+            nazwyCursor.moveToNext();
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(katclp.this, android.R.layout.simple_dropdown_item_1line, ListaNazw);
+
+        nazwa_C.setAdapter(adapter);
+        nazwa_C.setThreshold(1);
+        nazwa_L.setAdapter(adapter);
+        nazwa_L.setThreshold(1);
+        nazwa_P.setAdapter(adapter);
+        nazwa_P.setThreshold(1);
+
+        nazwa_C.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String nazwa="";
+
+                Toast.makeText(parent.getContext(), "Wybrałeś punkt numer " + parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
+
+                nazwa = parent.getItemAtPosition(position).toString();
+
+                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                XYHCursor.moveToFirst();
+                Cx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
+                Cy.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
+            }
+        });
+        nazwa_L.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String nazwa="";
+
+                Toast.makeText(parent.getContext(), "Wybrałeś punkt numer " + parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
+
+                nazwa = parent.getItemAtPosition(position).toString();
+
+                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                XYHCursor.moveToFirst();
+                Lx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
+                Ly.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
+            }
+        });
+        nazwa_P.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String nazwa="";
+
+                Toast.makeText(parent.getContext(), "Wybrałeś punkt numer " + parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
+
+                nazwa = parent.getItemAtPosition(position).toString();
+
+                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                XYHCursor.moveToFirst();
+                Px.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
+                Py.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
+            }
+        });
 
         oblicz.setOnClickListener(new View.OnClickListener() {
             @Override

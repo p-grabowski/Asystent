@@ -11,75 +11,94 @@
         tools:context=".Punkty"
         android:orientation="vertical">
 
+
         <ListView
             android:id="@+id/lV_punkty"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="400dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_margin="20dp"
             android:isScrollContainer="true"></ListView>
 
+<TableLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+<TableRow>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="#0000ff"
+        android:textSize="14dp"
+        android:text="Trzymaj, aby przesuwać liste"
+/>
         <Button
             android:id="@+id/bT_punkty_dodaj"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="dodaj punkt"
             android:textColor="#0000ff"
-            android:textSize="20dp" />
-
+            android:textSize="15dp"
+            android:layout_gravity="right"/>
+</TableRow></TableLayout>
         <EditText
-            android:id="@+id/eT_NAZWA"
+            android:id="@+id/eT_punkty_Nazwa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="NAZWA"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:textColorHint="#0000ff"/>
         <EditText
-            android:id="@+id/eT_X"
+            android:id="@+id/eT_punkty_X"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="X"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff"/>
         <EditText
-            android:id="@+id/eT_Y"
+            android:id="@+id/eT_punkty_Y"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Y"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff"/>
         <EditText
-            android:id="@+id/eT_H"
+            android:id="@+id/eT_punkty_H"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="H"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff"/>
         <EditText
-            android:id="@+id/eT_ID"
+            android:id="@+id/eT_punkty_ID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID"
+            android:hint="Id"
             android:inputType="numberDecimal"
             android:textColorHint="#0000ff"/>
-
-        <Button
+       <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="zamień"
             android:textColor="#0000ff"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:id="@+id/bT_punkty_zmien"
-            />
+           android:layout_gravity="center"/>
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="usun"
             android:textColor="#0000ff"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:id="@+id/bT_punkty_usun"
-            />
-
+            android:layout_gravity="center"/>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="wyczyść liste"
+            android:textColor="#0000ff"
+            android:textSize="15dp"
+            android:id="@+id/bT_punkty_wyczysc"
+            android:layout_gravity="center"/>
     </LinearLayout>
 </ScrollView>

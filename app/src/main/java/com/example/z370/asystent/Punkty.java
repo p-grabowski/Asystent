@@ -29,11 +29,11 @@ import static java.lang.Double.parseDouble;
 
 public class Punkty extends Activity {
 
-static BazaPunktow baza;
+    static BazaPunktow baza;
 
-EditText X,Y,H,NAZWA, ID;
-Button dodaj;
-TextView punkt, zmien,usun;
+    EditText X,Y,H,NAZWA, ID;
+    Button dodaj;
+    TextView punkt, zmien,usun;
 
 
     @Override
@@ -44,11 +44,11 @@ TextView punkt, zmien,usun;
         baza = new BazaPunktow(this);
 
 
-        NAZWA = findViewById(R.id.eT_NAZWA);
-        X = findViewById(R.id.eT_X);
-        Y = findViewById(R.id.eT_Y);
-        H = findViewById(R.id.eT_H);
-        ID = findViewById(R.id.eT_ID);
+        NAZWA = findViewById(R.id.eT_punkty_Nazwa);
+        X = findViewById(R.id.eT_punkty_X);
+        Y = findViewById(R.id.eT_punkty_Y);
+        H = findViewById(R.id.eT_punkty_H);
+        ID = findViewById(R.id.eT_punkty_ID);
         dodaj = findViewById(R.id.bT_punkty_dodaj);
         zmien = findViewById(R.id.bT_punkty_zmien);
         usun = findViewById(R.id.bT_punkty_usun);
@@ -63,9 +63,10 @@ TextView punkt, zmien,usun;
                         isEmpty(H.getText())
                         ) {
                     Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pola (Nazwa, X, Y, H)!", Toast.LENGTH_SHORT).show();
-                } else
-                DodajDane();
-
+                } else {
+                    DodajDane();
+                    AuktualizujListe();
+                }
             }
         });
 
@@ -79,8 +80,10 @@ TextView punkt, zmien,usun;
                         isEmpty(ID.getText())
                         ) {
                     Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pola (Nazwa, X, Y, H, ID)!", Toast.LENGTH_SHORT).show();
-                } else
+                } else {
                     ZmienDane();
+                    AuktualizujListe();
+                }
             }
         });
 
@@ -90,21 +93,15 @@ TextView punkt, zmien,usun;
                 if (isEmpty(ID.getText())
                         ) {
                     Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pola (Id)!", Toast.LENGTH_SHORT).show();
-                } else
+                } else {
                     UsunDane();
+                    AuktualizujListe();
+                }
             }
         });
 
+AuktualizujListe();
 
-        ListView listView = findViewById(R.id.lV_punkty);
-
-        Cursor punktyCursor = baza.pokazcalabaze();
-        PuntyAdapter PunktyAdapter = new PuntyAdapter(this, punktyCursor);
-        listView.setAdapter(PunktyAdapter);
-
-        registerForContextMenu(listView);
-
-      //  PunktyAdapter.changeCursor(punktyCursor); // Przełącz na nowy kursor i aktualizuj zawartość ListView
 
     }
 
@@ -133,9 +130,9 @@ TextView punkt, zmien,usun;
 
     public void DodajDane(){
         boolean dodany = baza.dodajpunkt(NAZWA.getText().toString(),
-                        parseDouble(String.valueOf(X.getText())),
-                        parseDouble(String.valueOf(Y.getText())),
-                        parseDouble(String.valueOf(H.getText()))
+                parseDouble(String.valueOf(X.getText())),
+                parseDouble(String.valueOf(Y.getText())),
+                parseDouble(String.valueOf(H.getText()))
         );
         if(dodany == true)
             Toast.makeText(Punkty.this,"Punkt Dodany", Toast.LENGTH_LONG).show();
@@ -164,6 +161,13 @@ TextView punkt, zmien,usun;
             Toast.makeText(Punkty.this,"Punkt Usunięty", Toast.LENGTH_LONG).show();
         else
             Toast.makeText(Punkty.this,"Punkt nie Usunięty", Toast.LENGTH_LONG).show();
+    }
+
+    public void AuktualizujListe(){
+        Cursor punktyCursor = baza.pokazcalabaze();
+        PuntyAdapter PunktyAdapter = new PuntyAdapter(Punkty.this, punktyCursor);
+        ListView listView = findViewById(R.id.lV_punkty);
+        listView.setAdapter(PunktyAdapter);
     }
 
     @Override

@@ -2,14 +2,21 @@ package com.example.z370.asystent;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import static android.text.TextUtils.isEmpty;
+import static com.example.z370.asystent.Punkty.baza;
 import static java.lang.Double.parseDouble;
 
 public class spadek extends Activity {
@@ -17,7 +24,7 @@ public class spadek extends Activity {
     Button oblicz, wroc;
     EditText Ax, Ay, Ah, Bx, By, Bh;
     TextView odleglosc, spadek;
-
+    AutoCompleteTextView nazwa_A, nazwa_B;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,60 @@ public class spadek extends Activity {
 
         oblicz = findViewById(R.id.B_oblicz_spadek);
         wroc = findViewById(R.id.B_wroc10);
+
+        nazwa_A = findViewById(R.id.eT_nazwa_A_spad);
+        nazwa_B = findViewById(R.id.eT_nazwa_B_spad);
+
+        baza = new BazaPunktow(this);
+        Cursor nazwyCursor = baza.pokazcalabaze();
+        ArrayList<String> ListaNazw = new ArrayList<String>();
+        nazwyCursor.moveToFirst();
+        while(!nazwyCursor.isAfterLast()) {
+            ListaNazw.add(nazwyCursor.getString(nazwyCursor.getColumnIndex("Nazwa")));
+            nazwyCursor.moveToNext();
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(spadek.this, android.R.layout.simple_dropdown_item_1line, ListaNazw);
+
+        nazwa_A.setAdapter(adapter);
+        nazwa_A.setThreshold(1);
+        nazwa_B.setAdapter(adapter);
+        nazwa_B.setThreshold(1);
+
+        nazwa_A.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String nazwa="";
+
+                Toast.makeText(parent.getContext(), "Wybrałeś punkt numer " + parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
+
+                nazwa = parent.getItemAtPosition(position).toString();
+
+                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                XYHCursor.moveToFirst();
+                Ax.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
+                Ay.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
+                Ah.setText(XYHCursor.getString(XYHCursor.getColumnIndex("H")));
+
+            }
+        });
+
+        nazwa_B.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String nazwa="";
+
+                Toast.makeText(parent.getContext(), "Wybrałeś punkt numer " + parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
+
+                nazwa = parent.getItemAtPosition(position).toString();
+
+                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                XYHCursor.moveToFirst();
+                Bx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
+                By.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
+                Bh.setText(XYHCursor.getString(XYHCursor.getColumnIndex("H")));
+
+            }
+        });
 
         oblicz.setOnClickListener(new View.OnClickListener() {
             @Override

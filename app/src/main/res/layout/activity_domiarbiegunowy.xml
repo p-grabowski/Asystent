@@ -32,12 +32,8 @@
                     android:text="Domiar Biegunowy"
                     android:textAlignment="center"
                     android:textSize="30dp" />
-
-
             </TableRow>
         </TableLayout>
-
-
 
         <TextView
             android:layout_width="match_parent"
@@ -48,8 +44,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nazwa"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:inputType="text"
+            android:textColorHint="#0000ff"
+            android:completionThreshold="1"/>
         <EditText
             android:id="@+id/eT_AX_domiarbieg"
             android:layout_width="match_parent"
@@ -76,8 +73,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nazwa"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:inputType="text"
+            android:textColorHint="#0000ff"
+            android:completionThreshold="1"/>
         <EditText
             android:id="@+id/eT_BX_domiarbieg"
             android:layout_width="match_parent"
@@ -167,7 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nowa Nazwa"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:textColorHint="#0000ff" />
 
         <Button

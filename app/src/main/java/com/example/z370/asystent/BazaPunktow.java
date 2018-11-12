@@ -56,6 +56,12 @@ onCreate(db);
         return res;
     }
 
+    public Cursor pokazXYH(String nazwa){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+Table_name+" where nazwa = '" + nazwa + "';", null);
+        return res;
+    }
+
     public boolean zmienpunkt(String id, String nazwa, double x, double y, double h){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

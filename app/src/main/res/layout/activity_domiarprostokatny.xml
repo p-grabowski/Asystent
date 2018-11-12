@@ -42,7 +42,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Punkt A:" />
-
+    <AutoCompleteTextView
+        android:id="@+id/eT_nazwa_A_domiarprost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
     <EditText
         android:id="@+id/eT_AX_domiarprost"
         android:layout_width="match_parent"
@@ -63,7 +69,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Punkt B:" />
-
+    <AutoCompleteTextView
+        android:id="@+id/eT_nazwa_B_domiarprost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
     <EditText
         android:id="@+id/eT_BX_domiarprost"
         android:layout_width="match_parent"
@@ -106,27 +118,55 @@
         android:hint="h"
         android:inputType="numberDecimal"
         android:textColorHint="#0000ff" />
-
-    <TextView
-        android:id="@+id/tV_PX_domiarprost"
+        <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:textSize="20dp"
+                android:text="P X = "/>
+            <TextView
+                android:id="@+id/tV_PX_domiarprost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:hint="xxx"
+                android:textSize="20dp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:textSize="20dp"
+                android:text="P Y = "/>
+            <TextView
+                android:id="@+id/tV_PY_domiarprost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"
+                android:hint="yyy"
+                android:textSize="20dp" />
+        </TableRow>
+    </TableLayout>
+    <EditText
+        android:id="@+id/eT_nazwa_P_domiarprost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="40dp"
-        android:hint="P X :"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/tV_PY_domiarprost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
-        android:hint="P Y: "
-        android:textSize="20dp" />
-
+        android:hint="Nowa Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
     <Button
         android:id="@+id/B_zapisz_domiarprost"
         android:layout_width="match_parent"

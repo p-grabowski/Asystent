@@ -27,7 +27,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Punkt A:" />
-
+    <AutoCompleteTextView
+        android:id="@+id/eT_nazwa_A_spad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
     <EditText
         android:id="@+id/eT_AX_spad"
         android:layout_width="match_parent"
@@ -55,7 +61,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Punkt B:" />
-
+    <AutoCompleteTextView
+        android:id="@+id/eT_nazwa_B_spad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
     <EditText
         android:id="@+id/eT_BX_spad"
         android:layout_width="match_parent"
