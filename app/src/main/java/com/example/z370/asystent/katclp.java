@@ -52,7 +52,7 @@ AutoCompleteTextView nazwa_C, nazwa_L, nazwa_P;
         ////////////////////////     autouzupełniania
         baza = new BazaPunktow(this);
 
-        Cursor nazwyCursor = baza.pokazcalabaze();
+        Cursor nazwyCursor = baza.pokazcalabaze(baza.idNazwaZbior(Global.WybranyZbior));
         ArrayList<String> ListaNazw = new ArrayList<String>();
         nazwyCursor.moveToFirst();
         while(!nazwyCursor.isAfterLast()) {
@@ -77,7 +77,7 @@ AutoCompleteTextView nazwa_C, nazwa_L, nazwa_P;
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Cx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 Cy.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
@@ -92,7 +92,7 @@ AutoCompleteTextView nazwa_C, nazwa_L, nazwa_P;
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Lx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 Ly.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
@@ -107,7 +107,7 @@ AutoCompleteTextView nazwa_C, nazwa_L, nazwa_P;
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Px.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 Py.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));

@@ -1,176 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" >
+android:layout_width="fill_parent"
+android:layout_height="wrap_content" >
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".wciecieliniowe">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:text="?"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:id="@+id/bT_pomoc_liniowe"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:text="Wcięcie liniowe"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+        </TableRow>
+    </TableLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Punkt A:" />
+    <AutoCompleteTextView
+        android:id="@+id/eT_nazwa_A_liniowe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
+    <EditText
+        android:id="@+id/eT_AX_liniowe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="X"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff" />
+
+    <EditText
+        android:id="@+id/eT_AY_liniowe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Y"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Punkt B:" />
+    <AutoCompleteTextView
+        android:id="@+id/eT_nazwa_B_liniowe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
+    <EditText
+        android:id="@+id/eT_BX_liniowe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="X"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff" />
+
+
+    <EditText
+        android:id="@+id/eT_BY_liniowe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Y"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Odległość a:" />
+
+    <EditText
+        android:id="@+id/eT_a_liniowe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="a"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Odległość b:" />
+
+    <EditText
+        android:id="@+id/eT_b_liniowe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="b"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:textSize="20dp"
+                android:text="P X = "/>
+            <TextView
+                android:id="@+id/tV_PX_liniowe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:hint="xxx"
+                android:textSize="20dp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:textSize="20dp"
+                android:text="P Y = "/>
+            <TextView
+                android:id="@+id/tV_PY_liniowe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"
+                android:hint="yyy"
+                android:textSize="20dp" />
+        </TableRow>
+    </TableLayout>
+    <EditText
+        android:id="@+id/eT_nazwa_P_liniowe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nowa Nazwa"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff" />
+    <Button
+        android:id="@+id/B_zapisz_liniowe"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".wciecieliniowe">
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TableRow>
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:text="?"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:id="@+id/bT_pomoc_liniowe"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="30dp"
-                    android:text="Wcięcie liniowe"
-                    android:textAlignment="center"
-                    android:textSize="30dp" />
-            </TableRow>
-        </TableLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Punkt A:" />
-        <AutoCompleteTextView
-            android:id="@+id/eT_nazwa_A_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nazwa"
-            android:inputType="text"
-            android:textColorHint="#0000ff" />
-        <EditText
-            android:id="@+id/eT_AX_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="X"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
-
-        <EditText
-            android:id="@+id/eT_AY_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Y"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Punkt B:" />
-        <AutoCompleteTextView
-            android:id="@+id/eT_nazwa_B_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nazwa"
-            android:inputType="text"
-            android:textColorHint="#0000ff" />
-        <EditText
-            android:id="@+id/eT_BX_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="X"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
-
-
-        <EditText
-            android:id="@+id/eT_BY_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Y"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Odległość a:" />
-
-        <EditText
-            android:id="@+id/eT_a_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="a"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Odległość b:" />
-
-        <EditText
-            android:id="@+id/eT_b_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="b"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="40dp"
-                    android:textSize="20dp"
-                    android:text="P X = "/>
-                <TextView
-                    android:id="@+id/tV_PX_liniowe"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="40dp"
-                    android:hint="xxx"
-                    android:textSize="20dp" />
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="40dp"
-                    android:textSize="20dp"
-                    android:text="P Y = "/>
-                <TextView
-                    android:id="@+id/tV_PY_liniowe"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginBottom="10dp"
-                    android:hint="yyy"
-                    android:textSize="20dp" />
-            </TableRow>
-        </TableLayout>
-        <EditText
-            android:id="@+id/eT_nazwa_P_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nowa Nazwa"
-            android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
-        <Button
-            android:id="@+id/B_zapisz_liniowe"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Zapisz Punkt" />
+        android:text="Zapisz Punkt" />
 
         <Button
             android:id="@+id/B_oblicz_liniowe"
@@ -184,5 +184,4 @@
             android:layout_height="match_parent"
             android:text="Wróć" />
     </LinearLayout>
-
 </ScrollView>

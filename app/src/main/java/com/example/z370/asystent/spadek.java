@@ -49,7 +49,7 @@ public class spadek extends Activity {
         nazwa_B = findViewById(R.id.eT_nazwa_B_spad);
 
         baza = new BazaPunktow(this);
-        Cursor nazwyCursor = baza.pokazcalabaze();
+        Cursor nazwyCursor = baza.pokazcalabaze(baza.idNazwaZbior(Global.WybranyZbior));
         ArrayList<String> ListaNazw = new ArrayList<String>();
         nazwyCursor.moveToFirst();
         while(!nazwyCursor.isAfterLast()) {
@@ -72,7 +72,7 @@ public class spadek extends Activity {
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Ax.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 Ay.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
@@ -90,7 +90,7 @@ public class spadek extends Activity {
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Bx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 By.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));

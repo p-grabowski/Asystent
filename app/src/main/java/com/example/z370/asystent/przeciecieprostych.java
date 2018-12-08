@@ -60,7 +60,7 @@ public class przeciecieprostych extends Activity {
         ////////////////////////     autouzupełniania
         baza = new BazaPunktow(this);
 
-        Cursor nazwyCursor = baza.pokazcalabaze();
+        Cursor nazwyCursor = baza.pokazcalabaze(baza.idNazwaZbior(Global.WybranyZbior));
         ArrayList<String> ListaNazw = new ArrayList<String>();
         nazwyCursor.moveToFirst();
         while(!nazwyCursor.isAfterLast()) {
@@ -87,7 +87,7 @@ public class przeciecieprostych extends Activity {
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Ax.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 Ay.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
@@ -103,7 +103,7 @@ public class przeciecieprostych extends Activity {
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Bx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 By.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
@@ -119,7 +119,7 @@ public class przeciecieprostych extends Activity {
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Cx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 Cy.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
@@ -135,7 +135,7 @@ public class przeciecieprostych extends Activity {
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Dx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 Dy.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
@@ -214,7 +214,7 @@ public class przeciecieprostych extends Activity {
                 if (isEmpty(nazwa_P.getText()) || isEmpty(Px.getText())) {
                     Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pole Nazwa i oblicz!", Toast.LENGTH_SHORT).show();
                 } else
-                    dodany = baza.dodajpunkt(nazwa_P.getText().toString(), parseDouble(String.valueOf(Px.getText())), parseDouble(String.valueOf(Py.getText())), 0);
+                    dodany = baza.dodajpunkt(nazwa_P.getText().toString(), parseDouble(String.valueOf(Px.getText())), parseDouble(String.valueOf(Py.getText())), 0, baza.idNazwaZbior(Global.WybranyZbior));
                 if(dodany == true)
                     Toast.makeText(przeciecieprostych.this,"Punkt Zapisany", Toast.LENGTH_LONG).show();
                 else

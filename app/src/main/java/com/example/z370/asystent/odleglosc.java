@@ -59,7 +59,7 @@ AutoCompleteTextView nazwa_A, nazwa_B;
         nazwa_B = findViewById(R.id.eT_nazwa_B_odl);
         ////////////////////////     autouzupełnianie
 
-        Cursor nazwyCursor = baza.pokazcalabaze();
+        Cursor nazwyCursor = baza.pokazcalabaze(baza.idNazwaZbior(Global.WybranyZbior));
         ArrayList<String> ListaNazw = new ArrayList<String>();
         nazwyCursor.moveToFirst();
         while(!nazwyCursor.isAfterLast()) {
@@ -82,7 +82,7 @@ AutoCompleteTextView nazwa_A, nazwa_B;
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Ax.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 Ay.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));
@@ -98,7 +98,7 @@ AutoCompleteTextView nazwa_A, nazwa_B;
 
                 nazwa = parent.getItemAtPosition(position).toString();
 
-                Cursor XYHCursor = baza.pokazXYH(nazwa);
+                Cursor XYHCursor = baza.pokazXYH(nazwa, baza.idNazwaZbior(Global.WybranyZbior));
                 XYHCursor.moveToFirst();
                 Bx.setText(XYHCursor.getString(XYHCursor.getColumnIndex("X")));
                 By.setText(XYHCursor.getString(XYHCursor.getColumnIndex("Y")));

@@ -5,16 +5,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import static com.example.z370.asystent.Punkty.baza;
 
 public class Obliczenia extends Activity {
 
     Button odleglosc, spadek, domiarprost, domiarbieg, katclp, przeciecie, punkt, liniowe, wprzod, wstecz, wroc;
-
+    TextView info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_obliczenia);
 
+        info = findViewById(R.id.info);
         odleglosc = findViewById(R.id.odleglosc);
         spadek = findViewById(R.id.spadek);
         domiarprost = findViewById(R.id.domiarprost);
@@ -26,6 +31,8 @@ public class Obliczenia extends Activity {
         wprzod = findViewById(R.id.wprzod);
         wstecz = findViewById(R.id.wstecz);
         wroc = findViewById(R.id.wroc);
+
+        info.setText("Aktywny zbiór: "+Global.WybranyZbior + "  "+ baza.idNazwaZbior(Global.WybranyZbior));
 
         odleglosc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +111,7 @@ public class Obliczenia extends Activity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
+
     }
     public void onBackPressed() {
         finish();

@@ -23,8 +23,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import static android.text.TextUtils.isEmpty;
 import static java.lang.Double.parseDouble;
 
@@ -34,7 +32,7 @@ public class Punkty extends Activity {
 
     EditText X,Y,H,NAZWA;
     Button dodaj, zmien, usun;
-    TextView punkt;
+    TextView punkt, info;
     ListView listView;
 
     @Override
@@ -44,7 +42,7 @@ public class Punkty extends Activity {
 
         baza = new BazaPunktow(this);
 
-
+        info = findViewById(R.id.tV_punkty_info);
         NAZWA = findViewById(R.id.eT_punkty_Nazwa);
         X = findViewById(R.id.eT_punkty_X);
         Y = findViewById(R.id.eT_punkty_Y);
@@ -54,8 +52,9 @@ public class Punkty extends Activity {
         usun = findViewById(R.id.bT_punkty_usun);
         listView = findViewById(R.id.lV_punkty);
 
-        AuktualizujListe();
+        info.setText("Aktywny zbiór: "+Global.WybranyZbior + "  "+ baza.idNazwaZbior(Global.WybranyZbior));
 
+        AuktualizujListe();
 
         dodaj.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +115,7 @@ public class Punkty extends Activity {
     public boolean onContextItemSelected(MenuItem item){
         if(item.getTitle()=="Edytuj"){
 
+
             Toast.makeText(getApplicationContext(),"do edycji",Toast.LENGTH_SHORT).show();
         }
         else if(item.getTitle()=="Usun"){
@@ -129,21 +129,29 @@ public class Punkty extends Activity {
         return true;
     }
 
-    public void DodajDane(){
-        boolean dodany = baza.dodajpunkt(NAZWA.getText().toString(),
-                parseDouble(String.valueOf(X.getText())),
-                parseDouble(String.valueOf(Y.getText())),
-                parseDouble(String.valueOf(H.getText()))
-        );
-        if(dodany == true)
-            Toast.makeText(Punkty.this,"Punkt Dodany", Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(Punkty.this,"Punkt nie Dodany", Toast.LENGTH_LONG).show();
+    public void DodajDane() {
+        if (baza.sprawdzPunkt(NAZWA.getText().toString()))
+            Toast.makeText(Punkty.this, "Wybrana nazwa już istnieje, zmień ją!", Toast.LENGTH_LONG).show();
+        else {
+            boolean dodany = baza.dodajpunkt(NAZWA.getText().toString(),
+                    parseDouble(String.valueOf(X.getText())),
+                    parseDouble(String.valueOf(Y.getText())),
+                    parseDouble(String.valueOf(H.getText())),
+                    baza.idNazwaZbior(Global.WybranyZbior)
+            );
+            if (dodany == true){
+                Toast.makeText(Punkty.this, "Punkt Dodany", Toast.LENGTH_LONG).show();
+                NAZWA.setText("");
+                X.setText("");
+                Y.setText("");
+                H.setText("");
+            }else
+                Toast.makeText(Punkty.this, "Punkt nie Dodany", Toast.LENGTH_LONG).show();
+            }
     }
 
-
     public void ZmienDane(){
-        Cursor XYHCursor = baza.pokazXYH(NAZWA.getText().toString());
+        Cursor XYHCursor = baza.pokazXYH(NAZWA.getText().toString(), baza.idNazwaZbior(Global.WybranyZbior));
         XYHCursor.moveToFirst();
         boolean isUpdate = baza.zmienpunkt(
                 XYHCursor.getString(XYHCursor.getColumnIndex("_id")),
@@ -152,17 +160,22 @@ public class Punkty extends Activity {
                 parseDouble(String.valueOf(Y.getText())),
                 parseDouble(String.valueOf(H.getText()))
         );
-        if(isUpdate == true)
-            Toast.makeText(Punkty.this,"Punkt Zmieniony", Toast.LENGTH_LONG).show();
-        else
+        if(isUpdate == true) {
+            Toast.makeText(Punkty.this, "Punkt Zmieniony", Toast.LENGTH_LONG).show();
+            NAZWA.setText("");
+            X.setText("");
+            Y.setText("");
+            H.setText("");
+        }else
             Toast.makeText(Punkty.this,"Punkt nie Zmieniony", Toast.LENGTH_LONG).show();
     }
 
     public void UsunDaneNazwa(String nazwa){
         Integer usuwanyWiersz = baza.usunpunktnazwa(nazwa);
-        if (usuwanyWiersz > 0)
-            Toast.makeText(Punkty.this,"Punkt Usunięty", Toast.LENGTH_LONG).show();
-        else
+        if (usuwanyWiersz > 0) {
+            Toast.makeText(Punkty.this, "Punkt Usunięty", Toast.LENGTH_LONG).show();
+            NAZWA.setText("");
+        }else
             Toast.makeText(Punkty.this,"Punkt nie Usunięty", Toast.LENGTH_LONG).show();
     }
 
@@ -175,7 +188,7 @@ public class Punkty extends Activity {
     }*/
 
     public void AuktualizujListe(){
-        Cursor punktyCursor = baza.pokazcalabaze();
+        Cursor punktyCursor = baza.pokazcalabaze(baza.idNazwaZbior(Global.WybranyZbior));
         PuntyAdapter PunktyAdapter = new PuntyAdapter(Punkty.this, punktyCursor);
         listView.setAdapter(PunktyAdapter);
         registerForContextMenu(listView);

@@ -12,6 +12,12 @@
         android:orientation="vertical">
 
 
+        <TextView
+            android:id="@+id/tV_punkty_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
         <ListView
             android:id="@+id/lV_punkty"
             android:layout_width="match_parent"
@@ -19,28 +25,28 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_margin="20dp"
-            android:isScrollContainer="true"></ListView>
+            android:isScrollContainer="true"/>
 
-<TableLayout
-android:layout_width="match_parent"
-android:layout_height="wrap_content">
-<TableRow>
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:textColor="#0000ff"
-        android:textSize="14dp"
-        android:text="Trzymaj, aby przesuwać liste"
-/>
-        <Button
-            android:id="@+id/bT_punkty_dodaj"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="dodaj punkt"
-            android:textColor="#0000ff"
-            android:textSize="15dp"
-            android:layout_gravity="right"/>
-</TableRow></TableLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textColor="#0000ff"
+                android:textSize="14dp"
+                android:text="Trzymaj, aby przesuwać liste"/>
+            <Button
+                android:id="@+id/bT_punkty_dodaj"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="dodaj punkt"
+                android:textColor="#0000ff"
+                android:textSize="15dp"
+                android:layout_gravity="right"/>
+        </TableRow>
+    </TableLayout>
         <EditText
             android:id="@+id/eT_punkty_Nazwa"
             android:layout_width="match_parent"
