@@ -37,7 +37,6 @@ public static String kropka(String X){
     return X;
 }
 
-
     public static String zaokraglij(double a, int x){ //zaokrąglanie liczby a do x miejsc po przecinku
 
         java.text.DecimalFormat df = new java.text.DecimalFormat();
@@ -193,4 +192,6 @@ public static String kropka(String X){
 
         return P;
     }
+
+
 }

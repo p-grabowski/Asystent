@@ -122,9 +122,9 @@ public class BazaPunktow extends SQLiteOpenHelper {
         return res;
     }
 
-    public boolean sprawdzPunkt(String nazwa){  //sprawdz czy istnieje, jesli istenieje więcej niż 0 rekordów to true, mniej - false
+    public boolean sprawdzPunkt(String nazwa, int idz){  //sprawdz czy istnieje, jesli istenieje więcej niż 0 rekordów to true, mniej - false
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+Table_name+" where "+COL_2+" ='" + nazwa + "';", null);
+        Cursor res = db.rawQuery("select * from "+Table_name+" where "+COL_2+" ='" + nazwa + "' AND "+COL_6 +" = '"+ idz +"';", null);
         if (res.getCount() > 0) return true;
         else return false;
     }

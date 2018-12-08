@@ -34,7 +34,8 @@
         <activity android:name=".spadek" />
         <activity android:name=".Obliczenia" />
         <activity android:name=".Punkty" />
-        <activity android:name=".Dodaj_punkt"></activity>
+        <activity android:name=".Dodaj_punkt" />
+        <activity android:name=".PolePow"></activity>
     </application>
 
 </manifest>

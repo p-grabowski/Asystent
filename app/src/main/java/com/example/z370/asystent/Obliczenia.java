@@ -12,7 +12,7 @@ import static com.example.z370.asystent.Punkty.baza;
 
 public class Obliczenia extends Activity {
 
-    Button odleglosc, spadek, domiarprost, domiarbieg, katclp, przeciecie, punkt, liniowe, wprzod, wstecz, wroc;
+    Button odleglosc, spadek, domiarprost, domiarbieg, katclp, przeciecie, punkt, liniowe, wprzod, wstecz, wroc, pole;
     TextView info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class Obliczenia extends Activity {
         liniowe = findViewById(R.id.liniowe);
         wprzod = findViewById(R.id.wprzod);
         wstecz = findViewById(R.id.wstecz);
+        pole = findViewById(R.id.pole);
         wroc = findViewById(R.id.wroc);
 
         info.setText("Aktywny zbiór: "+Global.WybranyZbior + "  "+ baza.idNazwaZbior(Global.WybranyZbior));
@@ -102,6 +103,13 @@ public class Obliczenia extends Activity {
             public void onClick(View v) {
                 finish();
                 startActivity(new Intent(getApplicationContext(), wcieciewstecz.class));
+            }
+        });
+        pole.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), PolePow.class));
             }
         });
         wroc.setOnClickListener(new View.OnClickListener() {

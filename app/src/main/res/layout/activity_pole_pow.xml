@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".wciecieliniowe">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="Pole powierzchni"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Punkt:" />
+    <AutoCompleteTextView
+        android:id="@+id/eT_nazwa_pole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        android:textColorHint="#0000ff" />
+    <EditText
+        android:id="@+id/eT_X_pole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="X"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff" />
+    <EditText
+        android:id="@+id/eT_Y_pole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Y"
+        android:inputType="numberDecimal"
+        android:textColorHint="#0000ff" />
+    <Button
+        android:id="@+id/bT_dodaj_pole"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Dodaj punkt" />
+    <ListView
+        android:id="@+id/lV_punkty_pole"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:isScrollContainer="true"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:textSize="20dp"
+                android:text="Pole = "/>
+            <TextView
+                android:id="@+id/tV_wynik_pole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:hint="xxx"
+                android:textSize="20dp" />
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:id="@+id/B_oblicz_pole"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Oblicz" />
+    <Button
+        android:id="@+id/B_wroc11"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Wróć" />
+</LinearLayout>
+</ScrollView>

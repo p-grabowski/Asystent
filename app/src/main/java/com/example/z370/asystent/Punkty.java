@@ -130,7 +130,7 @@ public class Punkty extends Activity {
     }
 
     public void DodajDane() {
-        if (baza.sprawdzPunkt(NAZWA.getText().toString()))
+        if (baza.sprawdzPunkt(NAZWA.getText().toString(), baza.idNazwaZbior(Global.WybranyZbior)))
             Toast.makeText(Punkty.this, "Wybrana nazwa już istnieje, zmień ją!", Toast.LENGTH_LONG).show();
         else {
             boolean dodany = baza.dodajpunkt(NAZWA.getText().toString(),
