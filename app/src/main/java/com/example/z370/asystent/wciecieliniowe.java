@@ -165,11 +165,15 @@ public class wciecieliniowe extends Activity {
                 if (isEmpty(nazwa_P.getText()) || isEmpty(Px.getText())) {
                     Toast.makeText(getApplicationContext(), "Wypełnij pole Nazwa i oblicz!", Toast.LENGTH_SHORT).show();
                 } else
+                if (baza.sprawdzPunkt(nazwa_P.getText().toString(), baza.idNazwaZbior(Global.WybranyZbior)))
+                    Toast.makeText(wciecieliniowe.this, "Wybrana nazwa już istnieje, zmień ją!", Toast.LENGTH_LONG).show();
+                else {
                     dodany = baza.dodajpunkt(nazwa_P.getText().toString(), parseDouble(String.valueOf(Px.getText())), parseDouble(String.valueOf(Py.getText())), 0, baza.idNazwaZbior(Global.WybranyZbior));
-                if(dodany == true)
-                    Toast.makeText(wciecieliniowe.this,"Punkt Zapisany", Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(wciecieliniowe.this,"Punkt nie Zapisany", Toast.LENGTH_LONG).show();
+                    if (dodany == true)
+                        Toast.makeText(wciecieliniowe.this, "Punkt Zapisany", Toast.LENGTH_LONG).show();
+                    else
+                        Toast.makeText(wciecieliniowe.this, "Punkt nie Zapisany", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

@@ -2,11 +2,13 @@ package com.example.z370.asystent;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Service;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -42,8 +44,10 @@ public class MainActivity extends Activity {
     nazwazbior = findViewById(R.id.eT_nazwa_zbior);
     usunzbior = findViewById(R.id.bT_usun_zbior);
 
-punkty.setEnabled(true);
-obliczenia.setEnabled(true);
+
+
+        punkty.setEnabled(true);
+        obliczenia.setEnabled(true);
 
         baza = new BazaPunktow(this);
 

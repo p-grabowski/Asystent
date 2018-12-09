@@ -34,8 +34,8 @@ public class PuntyAdapter extends CursorAdapter {
 
         // Populate fields with extracted properties
         tvNazwa.setText(Nazwa);
-        tvX.setText(String.valueOf(x));
-        tvY.setText(String.valueOf(y));
-        tvH.setText(String.valueOf(h));
+        tvX.setText("X: " + String.valueOf(x));
+        tvY.setText("Y: " + String.valueOf(y));
+        tvH.setText("H: " + String.valueOf(h));
     }
 }

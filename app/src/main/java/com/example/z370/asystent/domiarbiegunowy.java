@@ -173,11 +173,15 @@ public class domiarbiegunowy extends Activity {
                         isEmpty(Px.getText())) {
                     Toast.makeText(getApplicationContext(), "Wypełnij pole Nazwa i oblicz!", Toast.LENGTH_SHORT).show();
                 } else
-                dodany = baza.dodajpunkt(nazwa_P.getText().toString(), parseDouble(String.valueOf(Px.getText())), parseDouble(String.valueOf(Py.getText())), 0, baza.idNazwaZbior(Global.WybranyZbior));
-                if(dodany == true)
-                    Toast.makeText(domiarbiegunowy.this,"Punkt Zapisany", Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(domiarbiegunowy.this,"Punkt nie Zapisany", Toast.LENGTH_LONG).show();
+                if (baza.sprawdzPunkt(nazwa_P.getText().toString(), baza.idNazwaZbior(Global.WybranyZbior)))
+                    Toast.makeText(domiarbiegunowy.this, "Wybrana nazwa już istnieje, zmień ją!", Toast.LENGTH_LONG).show();
+                else {
+                    dodany = baza.dodajpunkt(nazwa_P.getText().toString(), parseDouble(String.valueOf(Px.getText())), parseDouble(String.valueOf(Py.getText())), 0, baza.idNazwaZbior(Global.WybranyZbior));
+                    if (dodany == true)
+                        Toast.makeText(domiarbiegunowy.this, "Punkt Zapisany", Toast.LENGTH_LONG).show();
+                    else
+                        Toast.makeText(domiarbiegunowy.this, "Punkt nie Zapisany", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

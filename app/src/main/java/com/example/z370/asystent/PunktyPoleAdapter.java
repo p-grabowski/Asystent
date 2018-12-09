@@ -30,9 +30,9 @@ public class PunktyPoleAdapter  extends ArrayAdapter<PolePow.ListaP> {
 
             // Populate the data into the template view using the data object
             tvNazwa.setText(punkt.Nazwa);
-            tvX.setText(String.valueOf(punkt.X));
-            tvY.setText(String.valueOf(punkt.Y));
-            tvH.setText(String.valueOf(punkt.H));
+            tvX.setText("X: " + String.valueOf(punkt.X));
+            tvY.setText("Y: " + String.valueOf(punkt.Y));
+            tvH.setText("H: " + String.valueOf(punkt.H));
             // Return the completed view to render on screen
             return convertView;
         }
