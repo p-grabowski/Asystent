@@ -19,9 +19,9 @@ import java.util.Arrays;
 
 import static android.text.TextUtils.isEmpty;
 import static com.example.z370.asystent.Punkty.baza;
-import static java.lang.Double.doubleToLongBits;
 import static java.lang.Double.parseDouble;
-import static java.lang.Double.toHexString;
+import static com.example.z370.asystent.FunkcjeObliczenia.kropka;
+
 
 public class PolePow extends Activity {
 
@@ -30,7 +30,9 @@ public class PolePow extends Activity {
     ListView lista;
     EditText x, y;
     AutoCompleteTextView nazwa;
-    int j =0;
+
+    int j = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +53,6 @@ public class PolePow extends Activity {
 
 
         final ArrayList<ListaP> listap = new ArrayList<ListaP>();
-
-
-
-
-
 
 
         Cursor nazwyCursor = baza.pokazcalabaze(baza.idNazwaZbior(Global.WybranyZbior));
@@ -95,7 +92,15 @@ public class PolePow extends Activity {
                     Toast.makeText(getApplicationContext(), "Wypełnij wszystkie pola (Nazwa, X, Y, H)!", Toast.LENGTH_SHORT).show();
                 } else {
                     DodajPunktDoListy(tab, listap);
-                   // wynik.setText(tab[0][1] + " " +tab[0][2]);
+                }
+            }
+        });
+
+        oblicz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(j>=3){
+                    wynik.setText(kropka(FunkcjeObliczenia.zaokraglij(FunkcjeObliczenia.polepowierzchni(tab, j), 5)));
                 }
             }
         });
@@ -138,20 +143,8 @@ public class PolePow extends Activity {
         x.setText("");
         y.setText("");
     }
-    public void AuktualizujListe(){
-        Cursor punktyCursor = baza.pokazcalabaze(baza.idNazwaZbior(Global.WybranyZbior));
-        PuntyAdapter PunktyAdapter = new PuntyAdapter(PolePow.this, punktyCursor);
 
-        ArrayList<ListaP> arrayOfpoints = new ArrayList<>();
-// Create the adapter to convert the array to views
-        PunktyPoleAdapter adapter = new PunktyPoleAdapter(this, arrayOfpoints);
-// Attach the adapter to a ListView
-
-        //lista.setAdapter(PunktyAdapter);
-        registerForContextMenu(lista);
-    }
-
-    public class ListaP{
+    public class ListaP{  //Lista z punktami wyświetlanymi
         public String Nazwa;
         public double X;
         public double Y;

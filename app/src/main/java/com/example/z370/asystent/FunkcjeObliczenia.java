@@ -22,6 +22,7 @@ import static java.lang.Math.tan;
 import static java.lang.Math.toDegrees;
 import static java.lang.Math.toRadians;
 
+
 public class FunkcjeObliczenia {
 
     public static class Punkt{
@@ -193,5 +194,28 @@ public static String kropka(String X){
         return P;
     }
 
+    public static double polepowierzchni(double[][] tab, int t){
+        double[][]tab2 = new double[100][2];
+        double wynik = 0, suma = 0, x = 0;
+        int i = 0;
 
+            tab2[t+1][0] = tab[0][0];
+            tab2[t+1][1] = tab[0][1];
+            tab2[0][0] = tab[t-1][0];
+            tab2[0][1] = tab[t-1][1];
+
+        for (i = 0; i < t; i++){
+            tab2[i+1][0] = tab[i][0];
+            tab2[i+1][1] = tab[i][1];
+        }
+
+        for (i = 0; i < t; i++){
+            x = (tab2[i+2][0]-tab2[i][0])*(tab2[i+1][1]);
+            suma = suma + x;
+        }
+
+        wynik = suma / (-2);
+
+        return wynik;
+    }
 }
