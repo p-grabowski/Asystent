@@ -8,14 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Obliczenia"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/background">
 
 
         <TextView
             android:id="@+id/info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            />
 
         <Button
             android:id="@+id/odleglosc"
@@ -23,7 +25,8 @@
             android:layout_height="wrap_content"
             android:text="Odległość"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"
             />
         <Button
             android:id="@+id/spadek"
@@ -31,7 +34,8 @@
             android:layout_height="wrap_content"
             android:text="Spadek"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"
             />
         <Button
             android:id="@+id/domiarprost"
@@ -39,7 +43,8 @@
             android:layout_height="wrap_content"
             android:text="domiar prostopadły"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"
             />
         <Button
             android:id="@+id/domiarbieg"
@@ -47,72 +52,72 @@
             android:layout_height="wrap_content"
             android:text="domiar biegunowy"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
-            />
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"            />
         <Button
             android:id="@+id/katclp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kąt CLP"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
-            />
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"            />
         <Button
             android:id="@+id/przeciecie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Przecięcie prostych"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
-            />
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"            />
         <Button
             android:id="@+id/punkt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="punkt na prostej"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
-            />
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"            />
         <Button
             android:id="@+id/liniowe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="wcięcie liniowe"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
-            />
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"            />
         <Button
             android:id="@+id/wprzod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="wciecie w przód"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
-            />
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"            />
         <Button
             android:id="@+id/wstecz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="wciecie wstecz"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
-            />
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"            />
         <Button
             android:id="@+id/pole"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pole Powierzchni"
             android:textSize="30dp"
-            android:textColor="#0f0f0f"
-            />
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"            />
         <Button
             android:id="@+id/wroc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="wróć"
             android:textSize="15dp"
-            android:textColor="#0f0f0f"
-            android:layout_gravity="center"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"            android:layout_gravity="center"
             />
     </LinearLayout>
 </ScrollView>

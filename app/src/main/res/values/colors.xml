@@ -23,5 +23,14 @@
     <color name="aa5">#FFDF41</color>
     <color name="aa6">#FFDF89</color>
 
+    <color name="backgroundbutton">#19189E</color>
+    <color name="textbutton">#FFDF41</color>
+    <color name="texttextview">#B2960A</color>
+    <color name="texttextview2">#ff0</color>
+    <color name="background">#615BFF</color>
+    <color name="edittext">#FFDF89</color>
+
+
+
 
 </resources>

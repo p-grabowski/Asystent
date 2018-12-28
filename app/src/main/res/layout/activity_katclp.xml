@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:background="@color/background">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,6 +27,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:id="@+id/bT_pomoc_katclp"
+                    android:background="@drawable/yellowbutton"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -33,7 +35,8 @@
                     android:layout_margin="30dp"
                     android:text="Kąt C L P"
                     android:textAlignment="center"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    android:textColor="@color/texttextview2"/>
             </TableRow>
         </TableLayout>
 
@@ -41,21 +44,25 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Punkt C:" />
+            android:text="Punkt C:"
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
         <AutoCompleteTextView
             android:id="@+id/eT_nazwa_C_katclp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nazwa"
             android:inputType="text"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
         <EditText
             android:id="@+id/eT_CX_katclp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="X"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
 
         <EditText
             android:id="@+id/eT_CY_katclp"
@@ -63,26 +70,31 @@
             android:layout_height="wrap_content"
             android:hint="Y"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Punkt L:" />
+            android:text="Punkt L:"
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
         <AutoCompleteTextView
             android:id="@+id/eT_nazwa_L_katclp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nazwa"
             android:inputType="text"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
         <EditText
             android:id="@+id/eT_LX_katclp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="X"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext" />
 
 
         <EditText
@@ -91,26 +103,31 @@
             android:layout_height="wrap_content"
             android:hint="Y"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Punkt P:" />
+            android:text="Punkt P:"
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
         <AutoCompleteTextView
             android:id="@+id/eT_nazwa_P_katclp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nazwa"
             android:inputType="text"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext" />
         <EditText
             android:id="@+id/eT_PX_katclp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="X"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
 
 
         <EditText
@@ -119,7 +136,8 @@
             android:layout_height="wrap_content"
             android:hint="Y"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext" />
 
 
         <TextView
@@ -130,20 +148,27 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="40dp"
             android:hint="Kąt :"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textColor="@color/textbutton"
+            android:textColorHint="@color/textbutton"
+            android:layout_marginBottom="20dp"/>
 
 
         <Button
             android:id="@+id/B_oblicz_katclp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Oblicz" />
+            android:text="Oblicz"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"/>
 
         <Button
             android:id="@+id/B_wroc5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Wróć" />
+            android:text="Wróć"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"/>
     </LinearLayout>
 
 </ScrollView>

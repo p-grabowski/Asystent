@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@color/aa2">
+    android:background="@color/background">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +14,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="50dp"
-        android:textColor="@color/aa5"
+        android:textColor="@color/textbutton"
         android:textStyle="bold"
         />
 
@@ -37,9 +37,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bluebutton"
-                android:shadowColor="@color/blekit"
                 android:text="Usuń zbiór"
-                android:textColor="@color/aa5"/>
+                android:textColor="@color/textbutton"/>
         </TableRow>
     </TableLayout>
     <TableLayout
@@ -55,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Nazwa zbioru"
                 android:inputType="text"
-                android:textColorHint="@color/aa6"/>
+                android:textColorHint="@color/edittext"/>
             <Button
                 android:background="@drawable/bluebutton"
 
@@ -63,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Dodaj zbiór"
-                android:textColor="@color/aa5"
+                android:textColor="@color/textbutton"
                 />
         </TableRow>
     </TableLayout>
@@ -75,7 +74,7 @@
         android:layout_marginTop="100dp"
         android:background="@drawable/bluebutton"
         android:text="Punkty"
-        android:textColor="@color/aa5"
+        android:textColor="@color/textbutton"
         android:textSize="30dp" />
 
     <Button
@@ -86,7 +85,7 @@
         android:layout_marginTop="20dp"
         android:text="Obliczenia"
         android:textSize="30dp"
-        android:textColor="@color/aa5"
+        android:textColor="@color/textbutton"
         />
 
     <TextView
@@ -95,7 +94,7 @@
         android:gravity="bottom"
         android:layout_marginBottom="600dp"
         android:textAlignment="center"
-        android:textColor="@color/aa4"
+        android:textColor="@color/texttextview"
         android:textStyle="bold"
         android:text="wykonał Przemysław Grabowski" />
     <TextView

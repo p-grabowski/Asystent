@@ -5,7 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:background="@color/background">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,37 +21,45 @@
         android:layout_margin="30dp"
         android:text="Pole powierzchni"
         android:textAlignment="center"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:textColor="@color/textbutton"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Punkt:" />
+        android:text="Punkt:"
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
     <AutoCompleteTextView
         android:id="@+id/eT_nazwa_pole"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nazwa"
         android:inputType="text"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
     <EditText
         android:id="@+id/eT_X_pole"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="X"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext" />
     <EditText
         android:id="@+id/eT_Y_pole"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Y"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
     <Button
         android:id="@+id/bT_dodaj_pole"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Dodaj punkt" />
+        android:text="Dodaj punkt"
+        android:background="@drawable/bluebutton"
+        android:textColor="@color/textbutton"/>
     <ListView
         android:id="@+id/lV_punkty_pole"
         android:layout_width="match_parent"
@@ -70,7 +79,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="40dp"
                 android:textSize="20dp"
-                android:text="Pole = "/>
+                android:text="Pole = "
+                android:textColor="@color/textbutton"
+                android:textColorHint="@color/textbutton"/>
             <TextView
                 android:id="@+id/tV_wynik_pole"
                 android:layout_width="match_parent"
@@ -79,18 +90,24 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="40dp"
                 android:hint="xxx"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="@color/textbutton"
+                android:textColorHint="@color/textbutton"/>
         </TableRow>
     </TableLayout>
     <Button
         android:id="@+id/B_oblicz_pole"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Oblicz" />
+        android:text="Oblicz"
+        android:background="@drawable/bluebutton"
+        android:textColor="@color/textbutton"/>
     <Button
         android:id="@+id/B_wroc11"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Wróć" />
+        android:text="Wróć"
+        android:background="@drawable/bluebutton"
+        android:textColor="@color/textbutton"/>
     </LinearLayout>
     </ScrollView>

@@ -5,6 +5,7 @@ android:layout_width="fill_parent"
 android:layout_height="wrap_content"
     android:focusable="true"
     android:focusableInTouchMode="true"
+    android:background="@color/background"
 >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -25,6 +26,7 @@ android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:id="@+id/bT_pomoc_liniowe"
+                android:background="@drawable/yellowbutton"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -32,27 +34,32 @@ android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:text="Wcięcie liniowe"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:textColor="@color/textbutton"/>
         </TableRow>
     </TableLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Punkt A:" />
+        android:text="Punkt A:"
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
     <AutoCompleteTextView
         android:id="@+id/eT_nazwa_A_liniowe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nazwa"
         android:inputType="text"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
     <EditText
         android:id="@+id/eT_AX_liniowe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="X"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext" />
 
     <EditText
         android:id="@+id/eT_AY_liniowe"
@@ -60,26 +67,31 @@ android:layout_height="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Y"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Punkt B:" />
+        android:text="Punkt B:"
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
     <AutoCompleteTextView
         android:id="@+id/eT_nazwa_B_liniowe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nazwa"
         android:inputType="text"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
     <EditText
         android:id="@+id/eT_BX_liniowe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="X"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
 
 
     <EditText
@@ -88,12 +100,15 @@ android:layout_height="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Y"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Odległość a:" />
+        android:text="Odległość a:"
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
 
     <EditText
         android:id="@+id/eT_a_liniowe"
@@ -101,12 +116,15 @@ android:layout_height="wrap_content"
         android:layout_height="wrap_content"
         android:hint="a"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Odległość b:" />
+        android:text="Odległość b:"
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
 
     <EditText
         android:id="@+id/eT_b_liniowe"
@@ -114,7 +132,8 @@ android:layout_height="wrap_content"
         android:layout_height="wrap_content"
         android:hint="b"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
 
     <TableLayout
         android:layout_width="match_parent"
@@ -127,7 +146,9 @@ android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="40dp"
                 android:textSize="20dp"
-                android:text="P X = "/>
+                android:text="P X = "
+                android:textColor="@color/textbutton"
+                android:textColorHint="@color/textbutton"/>
             <TextView
                 android:id="@+id/tV_PX_liniowe"
                 android:layout_width="match_parent"
@@ -136,7 +157,9 @@ android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="40dp"
                 android:hint="xxx"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="@color/textbutton"
+                android:textColorHint="@color/textbutton"/>
         </TableRow>
         <TableRow>
             <TextView
@@ -146,7 +169,9 @@ android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="40dp"
                 android:textSize="20dp"
-                android:text="P Y = "/>
+                android:text="P Y = "
+                android:textColor="@color/textbutton"
+                android:textColorHint="@color/textbutton"/>
             <TextView
                 android:id="@+id/tV_PY_liniowe"
                 android:layout_width="match_parent"
@@ -155,7 +180,9 @@ android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
                 android:hint="yyy"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="@color/textbutton"
+                android:textColorHint="@color/textbutton"/>
         </TableRow>
     </TableLayout>
     <EditText
@@ -164,23 +191,30 @@ android:layout_height="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Nowa Nazwa"
         android:inputType="numberDecimal"
-        android:textColorHint="#0000ff" />
+        android:textColor="@color/edittext"
+        android:textColorHint="@color/edittext"/>
     <Button
         android:id="@+id/B_zapisz_liniowe"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Zapisz Punkt" />
+        android:text="Zapisz Punkt"
+        android:background="@drawable/bluebutton"
+        android:textColor="@color/textbutton"/>
 
         <Button
             android:id="@+id/B_oblicz_liniowe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Oblicz" />
+            android:text="Oblicz"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"/>
 
         <Button
             android:id="@+id/B_wroc8"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Wróć" />
+            android:text="Wróć"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"/>
     </LinearLayout>
 </ScrollView>

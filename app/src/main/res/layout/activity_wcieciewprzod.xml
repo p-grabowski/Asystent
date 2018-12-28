@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:background="@color/background">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,6 +27,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:id="@+id/bT_pomoc_wprzod"
+                    android:background="@drawable/yellowbutton"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -33,7 +35,8 @@
                     android:layout_margin="30dp"
                     android:text="Wcięcie w przód"
                     android:textAlignment="center"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    android:textColor="@color/textbutton"/>
             </TableRow>
         </TableLayout>
 
@@ -41,21 +44,26 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Punkt A:" />
+            android:text="Punkt A:"
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
         <AutoCompleteTextView
             android:id="@+id/eT_nazwa_A_wprzod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nazwa"
             android:inputType="text"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"
+            />
         <EditText
             android:id="@+id/eT_AX_wprzod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="X"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
 
         <EditText
             android:id="@+id/eT_AY_wprzod"
@@ -63,26 +71,31 @@
             android:layout_height="wrap_content"
             android:hint="Y"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Punkt B:" />
+            android:text="Punkt B:"
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
         <AutoCompleteTextView
             android:id="@+id/eT_nazwa_B_wprzod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nazwa"
             android:inputType="text"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext" />
         <EditText
             android:id="@+id/eT_BX_wprzod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="X"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
 
 
         <EditText
@@ -91,12 +104,15 @@
             android:layout_height="wrap_content"
             android:hint="Y"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kąt a:" />
+            android:text="Kąt a:"
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
 
         <EditText
             android:id="@+id/eT_a_wprzod"
@@ -104,12 +120,15 @@
             android:layout_height="wrap_content"
             android:hint="alfa"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kąt b:" />
+            android:text="Kąt b:"
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
 
         <EditText
             android:id="@+id/eT_b_wprzod"
@@ -117,7 +136,8 @@
             android:layout_height="wrap_content"
             android:hint="beta"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -130,7 +150,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="40dp"
                     android:textSize="20dp"
-                    android:text="P X = "/>
+                    android:text="P X = "
+                    android:textColor="@color/textbutton"
+                    android:textColorHint="@color/textbutton"/>
                 <TextView
                     android:id="@+id/tV_PX_wprzod"
                     android:layout_width="match_parent"
@@ -139,7 +161,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="40dp"
                     android:hint="xxx"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textColor="@color/textbutton"
+                    android:textColorHint="@color/textbutton"/>
             </TableRow>
             <TableRow>
                 <TextView
@@ -149,7 +173,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="40dp"
                     android:textSize="20dp"
-                    android:text="P Y = "/>
+                    android:text="P Y = "
+                    android:textColor="@color/textbutton"
+                    android:textColorHint="@color/textbutton"/>
                 <TextView
                     android:id="@+id/tV_PY_wprzod"
                     android:layout_width="match_parent"
@@ -158,7 +184,9 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="10dp"
                     android:hint="yyy"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textColor="@color/textbutton"
+                    android:textColorHint="@color/textbutton"/>
             </TableRow>
         </TableLayout>
         <EditText
@@ -167,24 +195,32 @@
             android:layout_height="wrap_content"
             android:hint="Nowa Nazwa"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff" />
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"
+            />
         <Button
             android:id="@+id/B_zapisz_wprzod"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Zapisz Punkt" />
+            android:text="Zapisz Punkt"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"/>
 
         <Button
             android:id="@+id/B_oblicz_wprzod"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Oblicz" />
+            android:text="Oblicz"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"/>
 
         <Button
             android:id="@+id/B_wroc7"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Wróć" />
+            android:text="Wróć"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"/>
     </LinearLayout>
 
 </ScrollView>

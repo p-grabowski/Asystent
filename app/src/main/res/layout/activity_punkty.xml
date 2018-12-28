@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:background="@color/background">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,7 +19,9 @@
             android:id="@+id/tV_punkty_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@color/textbutton"
+            android:textColorHint="@color/textbutton"/>
 
         <ListView
             android:id="@+id/lV_punkty"
@@ -27,7 +30,10 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_margin="20dp"
-            android:isScrollContainer="true"/>
+            android:isScrollContainer="true"
+            android:textColor="@color/textbutton"
+            android:textColorHint="@color/textbutton"
+            />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -36,7 +42,8 @@
             <Button
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:textColor="#0000ff"
+                android:background="@drawable/bluebutton"
+                android:textColor="@color/textbutton"
                 android:textSize="14dp"
                 android:text="Trzymaj, aby przesuwać liste"/>
             <Button
@@ -44,7 +51,8 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="dodaj punkt"
-                android:textColor="#0000ff"
+                android:background="@drawable/bluebutton"
+                android:textColor="@color/textbutton"
                 android:textSize="15dp"
                 android:layout_gravity="right"/>
         </TableRow>
@@ -55,41 +63,48 @@
             android:layout_height="wrap_content"
             android:hint="NAZWA"
             android:inputType="text"
-            android:textColorHint="#0000ff"/>
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"
+            />
         <EditText
             android:id="@+id/eT_punkty_X"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="X"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff"/>
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
         <EditText
             android:id="@+id/eT_punkty_Y"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Y"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff"/>
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
         <EditText
             android:id="@+id/eT_punkty_H"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="H"
             android:inputType="numberDecimal"
-            android:textColorHint="#0000ff"/>
+            android:textColor="@color/edittext"
+            android:textColorHint="@color/edittext"/>
        <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="zamień"
-            android:textColor="#0000ff"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"
             android:textSize="15dp"
             android:id="@+id/bT_punkty_zmien"
-           android:layout_gravity="center"/>
+            android:layout_gravity="center"/>
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="usun"
-            android:textColor="#0000ff"
+            android:background="@drawable/bluebutton"
+            android:textColor="@color/textbutton"
             android:textSize="15dp"
             android:id="@+id/bT_punkty_usun"
             android:layout_gravity="center"/>
