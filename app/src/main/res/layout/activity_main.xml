@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/aa2">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,30 +14,40 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="50dp"
+        android:textColor="@color/aa5"
+        android:textStyle="bold"
         />
+
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp">
+
         <TableRow>
-        <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+
+            <Spinner
                 android:id="@+id/zbior"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"/>
+                android:layout_marginRight="50dp" />
+
             <Button
                 android:id="@+id/bT_usun_zbior"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bluebutton"
+                android:shadowColor="@color/blekit"
                 android:text="Usuń zbiór"
-                android:textColor="#0f0f0f"/>
-    </TableRow>
-</TableLayout>
+                android:textColor="@color/aa5"/>
+        </TableRow>
+    </TableLayout>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
-        android:focusableInTouchMode="true">
+        android:focusableInTouchMode="true"
+        >
         <TableRow>
             <EditText
                 android:id="@+id/eT_nazwa_zbior"
@@ -47,40 +55,51 @@
                 android:layout_height="wrap_content"
                 android:hint="Nazwa zbioru"
                 android:inputType="text"
-                android:textColorHint="#0000ff"/>
+                android:textColorHint="@color/aa6"/>
             <Button
+                android:background="@drawable/bluebutton"
+
                 android:id="@+id/bT_dodaj_zbior"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Dodaj zbiór"
-                android:textColor="#0f0f0f"
+                android:textColor="@color/aa5"
                 />
         </TableRow>
     </TableLayout>
+
     <Button
         android:id="@+id/punkty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Punkty"
-        android:textSize="30dp"
-        android:textColor="#0f0f0f"
         android:layout_marginTop="100dp"
-        />
+        android:background="@drawable/bluebutton"
+        android:text="Punkty"
+        android:textColor="@color/aa5"
+        android:textSize="30dp" />
 
     <Button
+        android:background="@drawable/bluebutton"
         android:id="@+id/obliczenia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Obliczenia"
         android:textSize="30dp"
-        android:textColor="#0f0f0f"
+        android:textColor="@color/aa5"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:gravity="bottom"
+        android:layout_marginBottom="600dp"
         android:textAlignment="center"
+        android:textColor="@color/aa4"
+        android:textStyle="bold"
         android:text="wykonał Przemysław Grabowski" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  "/>
 </LinearLayout>
-</ScrollView>

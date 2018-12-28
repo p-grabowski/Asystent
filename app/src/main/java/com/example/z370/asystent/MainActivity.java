@@ -100,6 +100,9 @@ public class MainActivity extends Activity {
 
             }
         });
+
+        //dodajzbior.setBackgroundColor(getResources().getColor(R.color.zielony));
+
     }
 
     @Override

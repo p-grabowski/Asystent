@@ -5,10 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.Settings;
-import android.widget.Toast;
 
-import static com.example.z370.asystent.Punkty.baza;
 
 public class BazaPunktow extends SQLiteOpenHelper {
 
